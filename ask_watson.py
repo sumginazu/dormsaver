@@ -7,13 +7,14 @@ class Watson:
     watson_conn = httplib.HTTPConnection(WATSON_INTERFACE_URI, WATSON_INTERFACE_PORT)
 
     def ask(self, question):
+        question = urllib.quote(question)
         self.watson_conn.request("GET", "/qa/answer?q=" + question)
         return self.watson_conn.getresponse()
 
 if __name__ == "__main__":
     #example use case
     watson = Watson()
-    q = urllib.quote('What is Carnegie Mellon University?')
+    q = 'What is Carnegie Mellon University?'
     res = watson.ask(q)
     print res.status, res.reason
     text = res.read()

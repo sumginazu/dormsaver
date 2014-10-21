@@ -7,6 +7,8 @@ class Watson:
     watson_conn = httplib.HTTPConnection(WATSON_INTERFACE_URI, WATSON_INTERFACE_PORT)
 
     def ask(self, question):
+        if question == '':
+            question = 'Bad question' # TODO change this to return a default HTTP response
         question = urllib.quote(question)
         self.watson_conn.request("GET", "/qa/answer?q=" + question)
         return self.watson_conn.getresponse()

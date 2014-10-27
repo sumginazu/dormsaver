@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */; };
+		CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */; };
+		CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E93D19F5927400D1962E /* ScannerViewController.m */; };
+		CF58E94119F5929A00D1962E /* Barcode.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E94019F5929A00D1962E /* Barcode.m */; };
+		CF58E94419F592E800D1962E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E94319F592E800D1962E /* SettingsViewController.m */; };
+		CF58E94619F5988D00D1962E /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = CF58E94519F5988D00D1962E /* barcode.png */; };
+		CF58E94819F598CA00D1962E /* side-menu-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = CF58E94719F598CA00D1962E /* side-menu-cart.png */; };
+		CF58E94A19F5993300D1962E /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = CF58E94919F5993300D1962E /* cart.png */; };
+		CF58E94C19F5BF9500D1962E /* Question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = CF58E94B19F5BF9500D1962E /* Question_mark.png */; };
+		CF58E94E19F5C00700D1962E /* carter.png in Resources */ = {isa = PBXBuildFile; fileRef = CF58E94D19F5C00700D1962E /* carter.png */; };
+		CF6719F619F61A730074EC10 /* storeacle.png in Resources */ = {isa = PBXBuildFile; fileRef = CF6719F519F61A730074EC10 /* storeacle.png */; };
+		CF6719FE19F7473D0074EC10 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6719FD19F7473D0074EC10 /* TabBarViewController.m */; };
+		CFB75727198F4A3C007226E7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB75726198F4A3C007226E7 /* ListViewController.m */; };
+		CFB7572A198F4A4C007226E7 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB75729198F4A4C007226E7 /* RegisterViewController.m */; };
+		CFCFE9A71992080F0099E9DA /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCFE9A61992080E0099E9DA /* EditFriendsViewController.m */; };
+		CFCFE9AA1992159D0099E9DA /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCFE9A91992159D0099E9DA /* FriendsViewController.m */; };
+		CFD57D5619F88B36005E41B8 /* storeacle1.png in Resources */ = {isa = PBXBuildFile; fileRef = CFD57D5519F88B36005E41B8 /* storeacle1.png */; };
+		CFD84D61198F6C4F006019B8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D60198F6C4F006019B8 /* Parse.framework */; };
+		CFD84D6B198F6CA8006019B8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D62198F6CA8006019B8 /* AudioToolbox.framework */; };
+		CFD84D6C198F6CA8006019B8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D63198F6CA8006019B8 /* CFNetwork.framework */; };
+		CFD84D6D198F6CA8006019B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D64198F6CA8006019B8 /* CoreLocation.framework */; };
+		CFD84D6E198F6CA8006019B8 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D65198F6CA8006019B8 /* libz.1.1.3.dylib */; };
+		CFD84D6F198F6CA8006019B8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D66198F6CA8006019B8 /* MobileCoreServices.framework */; };
+		CFD84D70198F6CA8006019B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D67198F6CA8006019B8 /* QuartzCore.framework */; };
+		CFD84D71198F6CA8006019B8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D68198F6CA8006019B8 /* Security.framework */; };
+		CFD84D72198F6CA8006019B8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D69198F6CA8006019B8 /* StoreKit.framework */; };
+		CFD84D73198F6CA8006019B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD84D6A198F6CA8006019B8 /* SystemConfiguration.framework */; };
+		CFFEBB1B198F3186005E96BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB1A198F3186005E96BD /* Foundation.framework */; };
+		CFFEBB1D198F3186005E96BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB1C198F3186005E96BD /* CoreGraphics.framework */; };
+		CFFEBB1F198F3186005E96BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB1E198F3186005E96BD /* UIKit.framework */; };
+		CFFEBB25198F3186005E96BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB23198F3186005E96BD /* InfoPlist.strings */; };
+		CFFEBB27198F3186005E96BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB26198F3186005E96BD /* main.m */; };
+		CFFEBB2B198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB2A198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m */; };
+		CFFEBB2D198F3186005E96BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB2C198F3186005E96BD /* Images.xcassets */; };
+		CFFEBB34198F3186005E96BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB33198F3186005E96BD /* XCTest.framework */; };
+		CFFEBB35198F3186005E96BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB1A198F3186005E96BD /* Foundation.framework */; };
+		CFFEBB36198F3186005E96BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFEBB1E198F3186005E96BD /* UIKit.framework */; };
+		CFFEBB3E198F3186005E96BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB3C198F3186005E96BD /* InfoPlist.strings */; };
+		CFFEBB40198F3186005E96BD /* Beatlet1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB3F198F3186005E96BD /* Beatlet1Tests.m */; };
+		CFFEBB4A198F31B6005E96BD /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB49198F31B6005E96BD /* Storyboard.storyboard */; };
+		CFFEBB52198F34B6005E96BD /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB4C198F34B6005E96BD /* camera.png */; };
+		CFFEBB53198F34B6005E96BD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB4D198F34B6005E96BD /* camera@2x.png */; };
+		CFFEBB54198F34B6005E96BD /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB4E198F34B6005E96BD /* friends.png */; };
+		CFFEBB55198F34B6005E96BD /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB4F198F34B6005E96BD /* friends@2x.png */; };
+		CFFEBB56198F34B6005E96BD /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB50198F34B6005E96BD /* inbox.png */; };
+		CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB51198F34B6005E96BD /* inbox@2x.png */; };
+		CFFEBB59198F3538005E96BD /* beats.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB58198F3538005E96BD /* beats.png */; };
+		CFFEBB6C198F4621005E96BD /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB6A198F4621005E96BD /* InboxViewController.m */; };
+		CFFEBB6D198F4621005E96BD /* InboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB6B198F4621005E96BD /* InboxViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFFEBB37198F3186005E96BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFFEBB0F198F3185005E96BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFFEBB16198F3185005E96BD;
+			remoteInfo = Beatlet1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-icon.png"; sourceTree = "<group>"; };
+		CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatsonViewController.h; sourceTree = "<group>"; };
+		CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatsonViewController.m; sourceTree = "<group>"; };
+		CF58E93C19F5927400D1962E /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		CF58E93D19F5927400D1962E /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		CF58E93F19F5929A00D1962E /* Barcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barcode.h; sourceTree = "<group>"; };
+		CF58E94019F5929A00D1962E /* Barcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barcode.m; sourceTree = "<group>"; };
+		CF58E94219F592E800D1962E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CF58E94319F592E800D1962E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CF58E94519F5988D00D1962E /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
+		CF58E94719F598CA00D1962E /* side-menu-cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "side-menu-cart.png"; sourceTree = "<group>"; };
+		CF58E94919F5993300D1962E /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
+		CF58E94B19F5BF9500D1962E /* Question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Question_mark.png; sourceTree = "<group>"; };
+		CF58E94D19F5C00700D1962E /* carter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carter.png; sourceTree = "<group>"; };
+		CF6719F519F61A730074EC10 /* storeacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeacle.png; sourceTree = "<group>"; };
+		CF6719FC19F7473D0074EC10 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		CF6719FD19F7473D0074EC10 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		CFB75725198F4A3C007226E7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = ../ListViewController.h; sourceTree = "<group>"; };
+		CFB75726198F4A3C007226E7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = ../ListViewController.m; sourceTree = "<group>"; };
+		CFB75728198F4A4C007226E7 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
+		CFB75729198F4A4C007226E7 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
+		CFCFE9A51992080E0099E9DA /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		CFCFE9A61992080E0099E9DA /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
+		CFCFE9A81992159D0099E9DA /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		CFCFE9A91992159D0099E9DA /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		CFD57D5519F88B36005E41B8 /* storeacle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeacle1.png; sourceTree = "<group>"; };
+		CFD84D60198F6C4F006019B8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		CFD84D62198F6CA8006019B8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CFD84D63198F6CA8006019B8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CFD84D64198F6CA8006019B8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CFD84D65198F6CA8006019B8 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		CFD84D66198F6CA8006019B8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CFD84D67198F6CA8006019B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CFD84D68198F6CA8006019B8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CFD84D69198F6CA8006019B8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CFD84D6A198F6CA8006019B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CFFEBB17198F3186005E96BD /* Beatlet1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beatlet1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFEBB1A198F3186005E96BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CFFEBB1C198F3186005E96BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CFFEBB1E198F3186005E96BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CFFEBB22198F3186005E96BD /* Beatlet1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Beatlet1-Info.plist"; sourceTree = "<group>"; };
+		CFFEBB24198F3186005E96BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFFEBB26198F3186005E96BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFFEBB28198F3186005E96BD /* Beatlet1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Beatlet1-Prefix.pch"; sourceTree = "<group>"; };
+		CFFEBB29198F3186005E96BD /* Beatlet_PrototypeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Beatlet_PrototypeAppDelegate.h; sourceTree = "<group>"; };
+		CFFEBB2A198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beatlet_PrototypeAppDelegate.m; sourceTree = "<group>"; };
+		CFFEBB2C198F3186005E96BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CFFEBB32198F3186005E96BD /* Beatlet1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Beatlet1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFEBB33198F3186005E96BD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CFFEBB3B198F3186005E96BD /* Beatlet1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Beatlet1Tests-Info.plist"; sourceTree = "<group>"; };
+		CFFEBB3D198F3186005E96BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFFEBB3F198F3186005E96BD /* Beatlet1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beatlet1Tests.m; sourceTree = "<group>"; };
+		CFFEBB49198F31B6005E96BD /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		CFFEBB4C198F34B6005E96BD /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		CFFEBB4D198F34B6005E96BD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		CFFEBB4E198F34B6005E96BD /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		CFFEBB4F198F34B6005E96BD /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		CFFEBB50198F34B6005E96BD /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
+		CFFEBB51198F34B6005E96BD /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
+		CFFEBB58198F3538005E96BD /* beats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beats.png; sourceTree = "<group>"; };
+		CFFEBB69198F4621005E96BD /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxViewController.h; path = ../InboxViewController.h; sourceTree = "<group>"; };
+		CFFEBB6A198F4621005E96BD /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxViewController.m; path = ../InboxViewController.m; sourceTree = "<group>"; };
+		CFFEBB6B198F4621005E96BD /* InboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InboxViewController.xib; path = ../InboxViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFFEBB14198F3185005E96BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD84D6B198F6CA8006019B8 /* AudioToolbox.framework in Frameworks */,
+				CFD84D6C198F6CA8006019B8 /* CFNetwork.framework in Frameworks */,
+				CFD84D6D198F6CA8006019B8 /* CoreLocation.framework in Frameworks */,
+				CFD84D6E198F6CA8006019B8 /* libz.1.1.3.dylib in Frameworks */,
+				CFD84D6F198F6CA8006019B8 /* MobileCoreServices.framework in Frameworks */,
+				CFD84D70198F6CA8006019B8 /* QuartzCore.framework in Frameworks */,
+				CFD84D71198F6CA8006019B8 /* Security.framework in Frameworks */,
+				CFD84D72198F6CA8006019B8 /* StoreKit.framework in Frameworks */,
+				CFD84D73198F6CA8006019B8 /* SystemConfiguration.framework in Frameworks */,
+				CFFEBB1D198F3186005E96BD /* CoreGraphics.framework in Frameworks */,
+				CFFEBB1F198F3186005E96BD /* UIKit.framework in Frameworks */,
+				CFD84D61198F6C4F006019B8 /* Parse.framework in Frameworks */,
+				CFFEBB1B198F3186005E96BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFEBB2F198F3186005E96BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFEBB34198F3186005E96BD /* XCTest.framework in Frameworks */,
+				CFFEBB36198F3186005E96BD /* UIKit.framework in Frameworks */,
+				CFFEBB35198F3186005E96BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFFEBB0E198F3185005E96BD = {
+			isa = PBXGroup;
+			children = (
+				CFFEBB4B198F34B6005E96BD /* tab_bar_icons */,
+				CFFEBB49198F31B6005E96BD /* Storyboard.storyboard */,
+				CFFEBB20198F3186005E96BD /* Beatlet1 */,
+				CFFEBB39198F3186005E96BD /* Beatlet1Tests */,
+				CFFEBB19198F3186005E96BD /* Frameworks */,
+				CFFEBB18198F3186005E96BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFFEBB18198F3186005E96BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFFEBB17198F3186005E96BD /* Beatlet1.app */,
+				CFFEBB32198F3186005E96BD /* Beatlet1Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFFEBB19198F3186005E96BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFD84D62198F6CA8006019B8 /* AudioToolbox.framework */,
+				CFD84D63198F6CA8006019B8 /* CFNetwork.framework */,
+				CFD84D64198F6CA8006019B8 /* CoreLocation.framework */,
+				CFD84D65198F6CA8006019B8 /* libz.1.1.3.dylib */,
+				CFD84D66198F6CA8006019B8 /* MobileCoreServices.framework */,
+				CFD84D67198F6CA8006019B8 /* QuartzCore.framework */,
+				CFD84D68198F6CA8006019B8 /* Security.framework */,
+				CFD84D69198F6CA8006019B8 /* StoreKit.framework */,
+				CFD84D6A198F6CA8006019B8 /* SystemConfiguration.framework */,
+				CFD84D60198F6C4F006019B8 /* Parse.framework */,
+				CFFEBB1A198F3186005E96BD /* Foundation.framework */,
+				CFFEBB1C198F3186005E96BD /* CoreGraphics.framework */,
+				CFFEBB1E198F3186005E96BD /* UIKit.framework */,
+				CFFEBB33198F3186005E96BD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFFEBB20198F3186005E96BD /* Beatlet1 */ = {
+			isa = PBXGroup;
+			children = (
+				CF58E94219F592E800D1962E /* SettingsViewController.h */,
+				CF58E94319F592E800D1962E /* SettingsViewController.m */,
+				CF58E93F19F5929A00D1962E /* Barcode.h */,
+				CF58E94019F5929A00D1962E /* Barcode.m */,
+				CF58E93C19F5927400D1962E /* ScannerViewController.h */,
+				CF58E93D19F5927400D1962E /* ScannerViewController.m */,
+				CFB75725198F4A3C007226E7 /* ListViewController.h */,
+				CFB75726198F4A3C007226E7 /* ListViewController.m */,
+				CFB75728198F4A4C007226E7 /* RegisterViewController.h */,
+				CFB75729198F4A4C007226E7 /* RegisterViewController.m */,
+				CFCFE9A51992080E0099E9DA /* EditFriendsViewController.h */,
+				CFCFE9A61992080E0099E9DA /* EditFriendsViewController.m */,
+				CFCFE9A81992159D0099E9DA /* FriendsViewController.h */,
+				CFCFE9A91992159D0099E9DA /* FriendsViewController.m */,
+				CFFEBB69198F4621005E96BD /* InboxViewController.h */,
+				CFFEBB6A198F4621005E96BD /* InboxViewController.m */,
+				CFFEBB6B198F4621005E96BD /* InboxViewController.xib */,
+				CFFEBB29198F3186005E96BD /* Beatlet_PrototypeAppDelegate.h */,
+				CFFEBB2A198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m */,
+				CFFEBB2C198F3186005E96BD /* Images.xcassets */,
+				CFFEBB21198F3186005E96BD /* Supporting Files */,
+				CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */,
+				CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */,
+				CF6719FC19F7473D0074EC10 /* TabBarViewController.h */,
+				CF6719FD19F7473D0074EC10 /* TabBarViewController.m */,
+			);
+			path = Beatlet1;
+			sourceTree = "<group>";
+		};
+		CFFEBB21198F3186005E96BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFFEBB22198F3186005E96BD /* Beatlet1-Info.plist */,
+				CFFEBB23198F3186005E96BD /* InfoPlist.strings */,
+				CFFEBB26198F3186005E96BD /* main.m */,
+				CFFEBB28198F3186005E96BD /* Beatlet1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFFEBB39198F3186005E96BD /* Beatlet1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CFFEBB3F198F3186005E96BD /* Beatlet1Tests.m */,
+				CFFEBB3A198F3186005E96BD /* Supporting Files */,
+			);
+			path = Beatlet1Tests;
+			sourceTree = "<group>";
+		};
+		CFFEBB3A198F3186005E96BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFFEBB3B198F3186005E96BD /* Beatlet1Tests-Info.plist */,
+				CFFEBB3C198F3186005E96BD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFFEBB4B198F34B6005E96BD /* tab_bar_icons */ = {
+			isa = PBXGroup;
+			children = (
+				CFD57D5519F88B36005E41B8 /* storeacle1.png */,
+				CF6719F519F61A730074EC10 /* storeacle.png */,
+				CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */,
+				CF58E94D19F5C00700D1962E /* carter.png */,
+				CF58E94B19F5BF9500D1962E /* Question_mark.png */,
+				CF58E94919F5993300D1962E /* cart.png */,
+				CF58E94719F598CA00D1962E /* side-menu-cart.png */,
+				CF58E94519F5988D00D1962E /* barcode.png */,
+				CFFEBB58198F3538005E96BD /* beats.png */,
+				CFFEBB4C198F34B6005E96BD /* camera.png */,
+				CFFEBB4D198F34B6005E96BD /* camera@2x.png */,
+				CFFEBB4E198F34B6005E96BD /* friends.png */,
+				CFFEBB4F198F34B6005E96BD /* friends@2x.png */,
+				CFFEBB50198F34B6005E96BD /* inbox.png */,
+				CFFEBB51198F34B6005E96BD /* inbox@2x.png */,
+			);
+			path = tab_bar_icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFFEBB16198F3185005E96BD /* Beatlet1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFEBB43198F3186005E96BD /* Build configuration list for PBXNativeTarget "Beatlet1" */;
+			buildPhases = (
+				CFFEBB13198F3185005E96BD /* Sources */,
+				CFFEBB14198F3185005E96BD /* Frameworks */,
+				CFFEBB15198F3185005E96BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Beatlet1;
+			productName = Beatlet1;
+			productReference = CFFEBB17198F3186005E96BD /* Beatlet1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFFEBB31198F3186005E96BD /* Beatlet1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFEBB46198F3186005E96BD /* Build configuration list for PBXNativeTarget "Beatlet1Tests" */;
+			buildPhases = (
+				CFFEBB2E198F3186005E96BD /* Sources */,
+				CFFEBB2F198F3186005E96BD /* Frameworks */,
+				CFFEBB30198F3186005E96BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFFEBB38198F3186005E96BD /* PBXTargetDependency */,
+			);
+			name = Beatlet1Tests;
+			productName = Beatlet1Tests;
+			productReference = CFFEBB32198F3186005E96BD /* Beatlet1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFFEBB0F198F3185005E96BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Beatlet.Prototype;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Sudev Bohra";
+				TargetAttributes = {
+					CFFEBB31198F3186005E96BD = {
+						TestTargetID = CFFEBB16198F3185005E96BD;
+					};
+				};
+			};
+			buildConfigurationList = CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CFFEBB0E198F3185005E96BD;
+			productRefGroup = CFFEBB18198F3186005E96BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFFEBB16198F3185005E96BD /* Beatlet1 */,
+				CFFEBB31198F3186005E96BD /* Beatlet1Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFFEBB15198F3185005E96BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */,
+				CFFEBB25198F3186005E96BD /* InfoPlist.strings in Resources */,
+				CFFEBB54198F34B6005E96BD /* friends.png in Resources */,
+				CFFEBB55198F34B6005E96BD /* friends@2x.png in Resources */,
+				CF58E94819F598CA00D1962E /* side-menu-cart.png in Resources */,
+				CFFEBB53198F34B6005E96BD /* camera@2x.png in Resources */,
+				CFFEBB56198F34B6005E96BD /* inbox.png in Resources */,
+				CFFEBB6D198F4621005E96BD /* InboxViewController.xib in Resources */,
+				CF58E94A19F5993300D1962E /* cart.png in Resources */,
+				CF58E94619F5988D00D1962E /* barcode.png in Resources */,
+				CFFEBB2D198F3186005E96BD /* Images.xcassets in Resources */,
+				CFFEBB52198F34B6005E96BD /* camera.png in Resources */,
+				CFD57D5619F88B36005E41B8 /* storeacle1.png in Resources */,
+				CFFEBB4A198F31B6005E96BD /* Storyboard.storyboard in Resources */,
+				CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */,
+				CF6719F619F61A730074EC10 /* storeacle.png in Resources */,
+				CF58E94C19F5BF9500D1962E /* Question_mark.png in Resources */,
+				CF58E94E19F5C00700D1962E /* carter.png in Resources */,
+				CFFEBB59198F3538005E96BD /* beats.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFEBB30198F3186005E96BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFEBB3E198F3186005E96BD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFFEBB13198F3185005E96BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFB7572A198F4A4C007226E7 /* RegisterViewController.m in Sources */,
+				CFFEBB27198F3186005E96BD /* main.m in Sources */,
+				CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */,
+				CFCFE9AA1992159D0099E9DA /* FriendsViewController.m in Sources */,
+				CF6719FE19F7473D0074EC10 /* TabBarViewController.m in Sources */,
+				CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */,
+				CFFEBB2B198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m in Sources */,
+				CFB75727198F4A3C007226E7 /* ListViewController.m in Sources */,
+				CFCFE9A71992080F0099E9DA /* EditFriendsViewController.m in Sources */,
+				CF58E94419F592E800D1962E /* SettingsViewController.m in Sources */,
+				CF58E94119F5929A00D1962E /* Barcode.m in Sources */,
+				CFFEBB6C198F4621005E96BD /* InboxViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFEBB2E198F3186005E96BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFEBB40198F3186005E96BD /* Beatlet1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFFEBB38198F3186005E96BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFFEBB16198F3185005E96BD /* Beatlet1 */;
+			targetProxy = CFFEBB37198F3186005E96BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFFEBB23198F3186005E96BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFFEBB24198F3186005E96BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CFFEBB3C198F3186005E96BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFFEBB3D198F3186005E96BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFFEBB41198F3186005E96BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CFFEBB42198F3186005E96BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFFEBB44198F3186005E96BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
+				INFOPLIST_FILE = "Beatlet1/Beatlet1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CFFEBB45198F3186005E96BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
+				INFOPLIST_FILE = "Beatlet1/Beatlet1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CFFEBB47198F3186005E96BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Beatlet1.app/Beatlet1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Beatlet1Tests/Beatlet1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CFFEBB48198F3186005E96BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Beatlet1.app/Beatlet1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
+				INFOPLIST_FILE = "Beatlet1Tests/Beatlet1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFEBB41198F3186005E96BD /* Debug */,
+				CFFEBB42198F3186005E96BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFFEBB43198F3186005E96BD /* Build configuration list for PBXNativeTarget "Beatlet1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFEBB44198F3186005E96BD /* Debug */,
+				CFFEBB45198F3186005E96BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFFEBB46198F3186005E96BD /* Build configuration list for PBXNativeTarget "Beatlet1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFEBB47198F3186005E96BD /* Debug */,
+				CFFEBB48198F3186005E96BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFFEBB0F198F3185005E96BD /* Project object */;
+}

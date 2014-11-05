@@ -9,5 +9,6 @@ def get_best_answer(question):
     if res.status != 200:
         return 'HTML Error ' + res.status
     json_res = json.loads(res.read())
-    answers = json_res['question']['evidencelist']
-    return answers[0]['text']
+    answers_ev = json_res['question']['evidencelist']
+    answers = json_res['question']['answers']
+    return answers[0]['text'] + '\n\n' + answers_ev[0]['text']

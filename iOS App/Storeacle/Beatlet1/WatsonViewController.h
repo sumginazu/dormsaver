@@ -10,6 +10,7 @@
 
 @interface WatsonViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *questionLabel;
+@property (retain, nonatomic) NSMutableData *receivedData;
 
 - (IBAction)askWatson:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;

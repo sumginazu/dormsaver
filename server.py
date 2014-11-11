@@ -1,6 +1,7 @@
 from socket import *
 import thread
-import response as res
+import requests
+import json
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr
@@ -11,15 +12,21 @@ def handler(clientsocket, clientaddr):
             break
         else:
             print data
-            #msg = "You sent me: %s" % data
-            msg = res.get_best_answer(data)
+            url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
+            headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
+            payload = {'question': {'questionText': data}}
+            r = requests.post(url, data = json.dumps(payload), headers = headers, auth = ('cmu_administrator', 'H5W2lhXv'))
+            j = r.json()
+            msg =  j["question"]["evidencelist"][0]["text"]
+            print msg
             clientsocket.send(msg)
     clientsocket.close()
 
 if __name__ == "__main__":
 
     host = 'localhost'
-    port = 55567
+    port = 3000
+
     buf = 1024
 
     addr = (host, port)

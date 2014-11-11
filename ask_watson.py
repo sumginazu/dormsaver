@@ -2,8 +2,8 @@ import httplib, urllib
 import json
 
 class Watson:
-    WATSON_INTERFACE_URI = "ghc47.ghc.andrew.cmu.edu"
-    WATSON_INTERFACE_PORT = 8070
+    WATSON_INTERFACE_URI = "localhost"
+    WATSON_INTERFACE_PORT = 3000
     watson_conn = httplib.HTTPConnection(WATSON_INTERFACE_URI, WATSON_INTERFACE_PORT)
 
     def ask(self, question):

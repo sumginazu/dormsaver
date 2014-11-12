@@ -2,6 +2,7 @@ from socket import *
 import thread
 import requests
 import json
+import unicodedata
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr
@@ -19,13 +20,17 @@ def handler(clientsocket, clientaddr):
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
             print msg
+            f = open("answer.txt", 'w')
+            m = msg.encode('ascii','ignore')
+            f.write(m)
+            f.close()
             clientsocket.send(msg)
     clientsocket.close()
 
 if __name__ == "__main__":
 
     host = 'localhost'
-    port = 3000
+    port = 3001
 
     buf = 1024
 

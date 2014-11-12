@@ -64,6 +64,46 @@ NSMutableData *mutData;
     }
     else
     {
+        
+      /*  NSString *receipt = question;
+        
+        NSString *post =[NSString stringWithFormat:@"%@",receipt];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:@"http://localhost:3001"]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        */
+       /*NSHTTPURLResponse* urlResponse = nil;
+        NSError *error = [[NSError alloc] init];
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"Response Code: %d", [urlResponse statusCode]);
+        if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300)
+        {
+            NSLog(@"Response: %@", result);
+        }*/
+        
+      /*  NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        NSLog(@"sending!");
+        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+        {
+            
+            
+            if (error)
+            {
+                NSLog(@"Error,%@", [error localizedDescription]);
+            }
+            else
+            {
+                NSLog(@"a%@", [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
+            }
+        }];*/
         //[self.answerLabel setText:@"""Answer not available."""];
   /*      NSString *post = question;
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -79,7 +119,7 @@ NSMutableData *mutData;
         [self.answerLabel setText:@"""Connect!"""];*/
         
         // Create the request.
-      /*  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
+      /*  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3001"]];
         
         // Specify that it will be a POST request
         request.HTTPMethod = @"POST";
@@ -100,9 +140,10 @@ NSMutableData *mutData;
         }
         else {
             NSLog(@"Connection could not be made");
-        }*/
+        }
+        */
         NSString *host = @"localhost";
-        int port = 3000;
+        int port = 3001;
         CFReadStreamRef readStream;
         CFWriteStreamRef writeStream;
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)(host), port, &readStream, &writeStream);
@@ -122,24 +163,29 @@ NSMutableData *mutData;
             int bytesWritten = CFWriteStreamWrite(writeStream, buf, strlen((char*)buf));
             NSLog(@"Written: %d", bytesWritten);
         }
-        
-        NSInputStream *iStream;
+/*        NSInputStream *iStream;
         NSURL *url;
-        url = [url initWithString:@"http://localhost:3000"];
+        url = [url initWithString:@"http://localhost:3001"];
         
-        [iStream initWithURL:url];
-        [iStream open];
-        
+//        [iStream initWithURL:url];
+ //       [iStream setDelegate:self];
+ //       [iStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+ //       [iStream open];
         NSInteger result;
+        NSString *str;
         uint8_t buffer[1024]; // BUFFER_LEN can be any positive integer
         while((result = [iStream read:buffer maxLength:1024]) != 0) {
             if(result > 0) {
-                // buffer contains result bytes of data to be handled
+                NSLog(@"%d", result);
+        //        str = [[NSString alloc] initWithBytes:buffer length:2048 encoding:NSUTF8StringEncoding];
+                NSLog(@"buffer: %@", str);
             } else {
                 // The stream had an error. You can get an NSError object using [iStream streamError]
             }
         }
-        /*
+        
+        str = [[NSString alloc] initWithBytes:buffer length:1024 encoding:NSUTF8StringEncoding];
+        NSLog(@"buffer: %@", str);
         CFReadStreamSetProperty(readStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
         if(!CFReadStreamOpen(readStream))
         {
@@ -148,16 +194,68 @@ NSMutableData *mutData;
         else
         {
          //   [NSThread sleepForTimeInterval: 5];
-            UInt8 bufr[1024];
+            UInt8 bufr[2048];
             int bytesRead  = CFReadStreamRead(readStream, bufr,strlen((char*)bufr));
+            NSString *str1 = [[NSString alloc] initWithBytes:bufr length:bytesRead encoding:NSUTF8StringEncoding];
             NSLog(@"Read: %d", bytesRead);
             NSLog(@"buffer: %s", bufr);
+            
+            NSLog(str1);
+            [self.answerLabel setText: str1];
+
         }*/
+        [NSThread sleepForTimeInterval:1];
+        NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/answer.txt";
+        NSError *error;
+        NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
         
+        if (error)
+            NSLog(@"Error reading file: %@", error.localizedDescription);
+        
+        // maybe for debugging...
+        NSLog(@"contents: %@", fileContents);
+        [self.answerLabel setText: fileContents];
+        NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
+        NSLog(@"items = %d", [listArray count]);
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+/*- (void)stream:(NSInputStream *)iStream handleEvent:(NSStreamEvent)event {
+    BOOL shouldClose = NO;
+    NSLog(@"entered");
+    switch(event) {
+        case  NSStreamEventEndEncountered:
+            shouldClose = YES;
+            // If all data hasn't been read, fall through to the "has bytes" event
+            if(![iStream hasBytesAvailable]) break;
+        case NSStreamEventHasBytesAvailable: ; // We need a semicolon here before we can declare local variables
+            uint8_t *buffer;
+            NSUInteger length;
+            BOOL freeBuffer = NO;
+            // The stream has data. Try to get its internal buffer instead of creating one
+            if(![iStream getBuffer:&buffer length:&length]) {
+                // The stream couldn't provide its internal buffer. We have to make one ourselves
+                buffer = malloc(1024 * sizeof(uint8_t));
+                freeBuffer = YES;
+                NSInteger result = [iStream read:buffer maxLength:1024];
+                if(result < 0) {
+                    // error copying to buffer
+                    break;
+                }
+                length = result;
+            }
+            // length bytes of data in buffer
+            if(freeBuffer) free(buffer);
+            break;
+        case NSStreamEventErrorOccurred:
+            // some other error
+            shouldClose = YES;
+            break;
+    }
+    if(shouldClose) [iStream close];
+}*/
+
+/*- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse object.
@@ -175,13 +273,14 @@ NSMutableData *mutData;
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [mutData appendData:data];
+    NSLog(@"Response Successful!");
 }
-
+*/
 
 /*
  if data is successfully received, this method will be called by connection
  */
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+/*- (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     // do something with the data
     // receivedData is declared as a property elsewhere
@@ -196,6 +295,6 @@ NSMutableData *mutData;
     // whatever data structures you are using.
     connection = nil;
     mutData = nil;
-}
+}*/
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF114FA51A11FEA400D34042 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF114FA41A11FEA400D34042 /* AVFoundation.framework */; };
+		CF1150801A11FEEB00D34042 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF11507F1A11FEEB00D34042 /* SpeechKit.framework */; };
+		CF1150831A1210C300D34042 /* record1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1150811A1210C300D34042 /* record1.png */; };
+		CF1150841A1210C300D34042 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1150821A1210C300D34042 /* record.png */; };
 		CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */; };
 		CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */; };
 		CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E93D19F5927400D1962E /* ScannerViewController.m */; };
@@ -69,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF114FA41A11FEA400D34042 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CF11507F1A11FEEB00D34042 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
+		CF1150811A1210C300D34042 /* record1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record1.png; sourceTree = "<group>"; };
+		CF1150821A1210C300D34042 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-icon.png"; sourceTree = "<group>"; };
 		CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatsonViewController.h; sourceTree = "<group>"; };
 		CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatsonViewController.m; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 		CF6719F519F61A730074EC10 /* storeacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeacle.png; sourceTree = "<group>"; };
 		CF6719FC19F7473D0074EC10 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		CF6719FD19F7473D0074EC10 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		CF7CD3471A13184D004F809E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		CFB75725198F4A3C007226E7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = ../ListViewController.h; sourceTree = "<group>"; };
 		CFB75726198F4A3C007226E7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = ../ListViewController.m; sourceTree = "<group>"; };
 		CFB75728198F4A4C007226E7 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
@@ -139,11 +148,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF114FA51A11FEA400D34042 /* AVFoundation.framework in Frameworks */,
 				CFD84D6B198F6CA8006019B8 /* AudioToolbox.framework in Frameworks */,
 				CFD84D6C198F6CA8006019B8 /* CFNetwork.framework in Frameworks */,
 				CFD84D6D198F6CA8006019B8 /* CoreLocation.framework in Frameworks */,
 				CFD84D6E198F6CA8006019B8 /* libz.1.1.3.dylib in Frameworks */,
 				CFD84D6F198F6CA8006019B8 /* MobileCoreServices.framework in Frameworks */,
+				CF1150801A11FEEB00D34042 /* SpeechKit.framework in Frameworks */,
 				CFD84D70198F6CA8006019B8 /* QuartzCore.framework in Frameworks */,
 				CFD84D71198F6CA8006019B8 /* Security.framework in Frameworks */,
 				CFD84D72198F6CA8006019B8 /* StoreKit.framework in Frameworks */,
@@ -192,6 +203,8 @@
 		CFFEBB19198F3186005E96BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF11507F1A11FEEB00D34042 /* SpeechKit.framework */,
+				CF114FA41A11FEA400D34042 /* AVFoundation.framework */,
 				CFD84D62198F6CA8006019B8 /* AudioToolbox.framework */,
 				CFD84D63198F6CA8006019B8 /* CFNetwork.framework */,
 				CFD84D64198F6CA8006019B8 /* CoreLocation.framework */,
@@ -213,6 +226,7 @@
 		CFFEBB20198F3186005E96BD /* Beatlet1 */ = {
 			isa = PBXGroup;
 			children = (
+				CF7CD3471A13184D004F809E /* GCDAsyncSocket.h */,
 				CF58E94219F592E800D1962E /* SettingsViewController.h */,
 				CF58E94319F592E800D1962E /* SettingsViewController.m */,
 				CF58E93F19F5929A00D1962E /* Barcode.h */,
@@ -274,6 +288,8 @@
 		CFFEBB4B198F34B6005E96BD /* tab_bar_icons */ = {
 			isa = PBXGroup;
 			children = (
+				CF1150811A1210C300D34042 /* record1.png */,
+				CF1150821A1210C300D34042 /* record.png */,
 				CFD57D5519F88B36005E41B8 /* storeacle1.png */,
 				CF6719F519F61A730074EC10 /* storeacle.png */,
 				CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */,
@@ -379,11 +395,13 @@
 				CFFEBB6D198F4621005E96BD /* InboxViewController.xib in Resources */,
 				CF58E94A19F5993300D1962E /* cart.png in Resources */,
 				CF58E94619F5988D00D1962E /* barcode.png in Resources */,
+				CF1150831A1210C300D34042 /* record1.png in Resources */,
 				CFFEBB2D198F3186005E96BD /* Images.xcassets in Resources */,
 				CFFEBB52198F34B6005E96BD /* camera.png in Resources */,
 				CFD57D5619F88B36005E41B8 /* storeacle1.png in Resources */,
 				CFFEBB4A198F31B6005E96BD /* Storyboard.storyboard in Resources */,
 				CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */,
+				CF1150841A1210C300D34042 /* record.png in Resources */,
 				CF6719F619F61A730074EC10 /* storeacle.png in Resources */,
 				CF58E94C19F5BF9500D1962E /* Question_mark.png in Resources */,
 				CF58E94E19F5C00700D1962E /* carter.png in Resources */,
@@ -537,6 +555,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2/DragonMobileRecognizer,
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2/DragonMobileVocalizer,
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
@@ -554,6 +578,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2/DragonMobileRecognizer,
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2/DragonMobileVocalizer,
+					/Users/Sudev/Downloads/DragonMobileSDK_1.4.12,
+					2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";

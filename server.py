@@ -3,6 +3,8 @@ import thread
 import requests
 import json
 import unicodedata
+from amazonproduct import API
+import nltk
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr
@@ -13,6 +15,31 @@ def handler(clientsocket, clientaddr):
             break
         else:
             print data
+            b = nltk.word_tokenize(data)
+
+            c = nltk.pos_tag(b)
+            print c
+            d = filter(lambda (a,b): b == 'NNP' or  b == 'NN', c)
+
+            query = d[0][0]
+            api = API(locale='us')
+
+            # get all books from result set and
+            # print author and title
+            items = api.item_search('Electronics', Keywords = "query", limit=1)
+
+
+
+            for item in items:
+                a = item.ASIN
+                result = api.item_lookup(str(a))
+                #print '%s %s' % (item.ItemAttributes.Title, item.ASIN)
+                try:
+                    result = api.similarity_lookup(str(a))
+                except:
+                    print "error"
+                print u"%s" % (result.Items.Item.ItemAttributes.Title)
+            
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
             payload = {'question': {'questionText': data}}
@@ -20,6 +47,9 @@ def handler(clientsocket, clientaddr):
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
             print msg
+            f = open("question.txt",'w')
+            f.write(data)
+            f.close()
             f = open("answer.txt", 'w')
             m = msg.encode('ascii','ignore')
             f.write(m)

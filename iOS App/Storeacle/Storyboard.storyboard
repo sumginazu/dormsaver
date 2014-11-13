@@ -337,7 +337,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="t5J-HJ-dGa" kind="push" id="1vs-2k-48s"/>
+                        <segue destination="t5J-HJ-dGa" kind="push" identifier="Barcode" id="1vs-2k-48s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjQ-B8-vmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,7 +380,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Microphone-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="4pu-Kd-glc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="record.png" translatesAutoresizingMaskIntoConstraints="NO" id="4pu-Kd-glc">
                                 <rect key="frame" x="120" y="414" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -398,6 +398,16 @@
                                 <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BV-io-CYG">
+                                <rect key="frame" x="120" y="414" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonAction:" destination="MWV-q7-69c" eventType="touchUpInside" id="Jfh-QF-j2x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -405,6 +415,7 @@
                     <connections>
                         <outlet property="answerLabel" destination="tmM-Fx-XvK" id="C0I-gQ-Thh"/>
                         <outlet property="questionLabel" destination="P1w-E7-V28" id="G4d-wC-F8n"/>
+                        <outlet property="recordIcon" destination="4pu-Kd-glc" id="gtC-V3-Fz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8T-cO-6UD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,28 +423,28 @@
             <point key="canvasLocation" x="1307" y="877"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="cMW-oX-JtE">
+        <scene sceneID="NqN-tZ-sQt">
             <objects>
-                <viewController id="blk-bP-IWJ" sceneMemberID="viewController">
+                <viewController id="LJP-xD-EO7" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zCd-Nu-ErV"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ulc-IZ-h5f"/>
+                        <viewControllerLayoutGuide type="top" id="NiW-QI-Yt0"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ix-A0-3nT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oaK-EE-ibQ">
+                    <view key="view" contentMode="scaleToFill" id="BpI-4f-Hul">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UXM-rG-gh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buB-iH-Aar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
     <resources>
-        <image name="Microphone-icon.png" width="512" height="512"/>
         <image name="Question_mark.png" width="30" height="30"/>
         <image name="barcode.png" width="40" height="40"/>
         <image name="carter.png" width="42" height="42"/>
+        <image name="record.png" width="167" height="167"/>
         <image name="storeacle1.png" width="600" height="225"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>

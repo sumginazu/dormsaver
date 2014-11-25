@@ -5,6 +5,7 @@ import json
 import unicodedata
 from amazonproduct import API
 import nltk
+from summarizer import *
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr
@@ -62,8 +63,6 @@ def handler(clientsocket, clientaddr):
                     result = api.similarity_lookup(str(a))
                 except:
                     print "error"
-                print u"%s" % (result.Items.Item.ItemAttributes.Title)  
-
     clientsocket.close()
 
 if __name__ == "__main__":

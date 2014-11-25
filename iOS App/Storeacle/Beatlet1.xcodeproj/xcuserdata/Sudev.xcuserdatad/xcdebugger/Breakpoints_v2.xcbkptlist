@@ -31,6 +31,10 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
+<<<<<<< HEAD
+            landmarkName = "@implementation WatsonViewController"
+            landmarkType = "3">
+=======
             landmarkName = "-initWithNibName:bundle:"
             landmarkType = "5">
          </BreakpointContent>
@@ -49,6 +53,7 @@
             endingLineNumber = "157"
             landmarkName = "-askWatson:"
             landmarkType = "5">
+>>>>>>> 7f1fe0baa3955dc379fc6cd30d24fbd83acaad27
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -45,7 +45,7 @@
             BlueprintIdentifier = "CFFEBB16198F3185005E96BD"
             BuildableName = "Beatlet1.app"
             BlueprintName = "Beatlet1"
-            ReferencedContainer = "container:Beatlet1.xcodeproj">
+            ReferencedContainer = "container:Beatlet12.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "CFFEBB16198F3185005E96BD"
             BuildableName = "Beatlet1.app"
             BlueprintName = "Beatlet1"
-            ReferencedContainer = "container:Beatlet1.xcodeproj">
+            ReferencedContainer = "container:Beatlet12.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

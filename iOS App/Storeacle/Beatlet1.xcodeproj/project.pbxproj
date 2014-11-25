@@ -11,6 +11,14 @@
 		CF1150801A11FEEB00D34042 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF11507F1A11FEEB00D34042 /* SpeechKit.framework */; };
 		CF1150831A1210C300D34042 /* record1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1150811A1210C300D34042 /* record1.png */; };
 		CF1150841A1210C300D34042 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1150821A1210C300D34042 /* record.png */; };
+		CF3673B91A14A2270052F73D /* RSTMALLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3673B21A14A2270052F73D /* RSTMALLCell.m */; };
+		CF3673BA1A14A2270052F73D /* RSTMALLData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3673B41A14A2270052F73D /* RSTMALLData.m */; };
+		CF3673BB1A14A2270052F73D /* RSTMALLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3673B61A14A2270052F73D /* RSTMALLImageView.m */; };
+		CF3673BC1A14A2270052F73D /* RSTMALLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3673B81A14A2270052F73D /* RSTMALLTableViewController.m */; };
+		CF3673BE1A14A3ED0052F73D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3673BD1A14A3ED0052F73D /* Images.xcassets */; };
+		CF3673C01A14A7140052F73D /* dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3673BF1A14A7140052F73D /* dislike.png */; };
+		CF3673C41A14AAEE0052F73D /* catalog.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3673C31A14AAEE0052F73D /* catalog.png */; };
+		CF3673C61A14AE5E0052F73D /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3673C51A14AE5E0052F73D /* stop.png */; };
 		CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */; };
 		CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */; };
 		CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E93D19F5927400D1962E /* ScannerViewController.m */; };
@@ -77,6 +85,18 @@
 		CF11507F1A11FEEB00D34042 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
 		CF1150811A1210C300D34042 /* record1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record1.png; sourceTree = "<group>"; };
 		CF1150821A1210C300D34042 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		CF3673B11A14A2270052F73D /* RSTMALLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTMALLCell.h; sourceTree = "<group>"; };
+		CF3673B21A14A2270052F73D /* RSTMALLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTMALLCell.m; sourceTree = "<group>"; };
+		CF3673B31A14A2270052F73D /* RSTMALLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTMALLData.h; sourceTree = "<group>"; };
+		CF3673B41A14A2270052F73D /* RSTMALLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTMALLData.m; sourceTree = "<group>"; };
+		CF3673B51A14A2270052F73D /* RSTMALLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTMALLImageView.h; sourceTree = "<group>"; };
+		CF3673B61A14A2270052F73D /* RSTMALLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTMALLImageView.m; sourceTree = "<group>"; };
+		CF3673B71A14A2270052F73D /* RSTMALLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTMALLTableViewController.h; sourceTree = "<group>"; };
+		CF3673B81A14A2270052F73D /* RSTMALLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTMALLTableViewController.m; sourceTree = "<group>"; };
+		CF3673BD1A14A3ED0052F73D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF3673BF1A14A7140052F73D /* dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dislike.png; sourceTree = "<group>"; };
+		CF3673C31A14AAEE0052F73D /* catalog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog.png; sourceTree = "<group>"; };
+		CF3673C51A14AE5E0052F73D /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-icon.png"; sourceTree = "<group>"; };
 		CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatsonViewController.h; sourceTree = "<group>"; };
 		CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatsonViewController.m; sourceTree = "<group>"; };
@@ -179,9 +199,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF3673B01A14A2170052F73D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CF3673BD1A14A3ED0052F73D /* Images.xcassets */,
+				CF3673B11A14A2270052F73D /* RSTMALLCell.h */,
+				CF3673B21A14A2270052F73D /* RSTMALLCell.m */,
+				CF3673B31A14A2270052F73D /* RSTMALLData.h */,
+				CF3673B41A14A2270052F73D /* RSTMALLData.m */,
+				CF3673B51A14A2270052F73D /* RSTMALLImageView.h */,
+				CF3673B61A14A2270052F73D /* RSTMALLImageView.m */,
+				CF3673B71A14A2270052F73D /* RSTMALLTableViewController.h */,
+				CF3673B81A14A2270052F73D /* RSTMALLTableViewController.m */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
 		CFFEBB0E198F3185005E96BD = {
 			isa = PBXGroup;
 			children = (
+				CF3673B01A14A2170052F73D /* Feed */,
 				CFFEBB4B198F34B6005E96BD /* tab_bar_icons */,
 				CFFEBB49198F31B6005E96BD /* Storyboard.storyboard */,
 				CFFEBB20198F3186005E96BD /* Beatlet1 */,
@@ -226,6 +263,7 @@
 		CFFEBB20198F3186005E96BD /* Beatlet1 */ = {
 			isa = PBXGroup;
 			children = (
+				CF3673BF1A14A7140052F73D /* dislike.png */,
 				CF7CD3471A13184D004F809E /* GCDAsyncSocket.h */,
 				CF58E94219F592E800D1962E /* SettingsViewController.h */,
 				CF58E94319F592E800D1962E /* SettingsViewController.m */,
@@ -288,6 +326,8 @@
 		CFFEBB4B198F34B6005E96BD /* tab_bar_icons */ = {
 			isa = PBXGroup;
 			children = (
+				CF3673C51A14AE5E0052F73D /* stop.png */,
+				CF3673C31A14AAEE0052F73D /* catalog.png */,
 				CF1150811A1210C300D34042 /* record1.png */,
 				CF1150821A1210C300D34042 /* record.png */,
 				CFD57D5519F88B36005E41B8 /* storeacle1.png */,
@@ -362,7 +402,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */;
+			buildConfigurationList = CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet12" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -386,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */,
+				CF3673C41A14AAEE0052F73D /* catalog.png in Resources */,
 				CFFEBB25198F3186005E96BD /* InfoPlist.strings in Resources */,
 				CFFEBB54198F34B6005E96BD /* friends.png in Resources */,
 				CFFEBB55198F34B6005E96BD /* friends@2x.png in Resources */,
@@ -397,12 +438,15 @@
 				CF58E94619F5988D00D1962E /* barcode.png in Resources */,
 				CF1150831A1210C300D34042 /* record1.png in Resources */,
 				CFFEBB2D198F3186005E96BD /* Images.xcassets in Resources */,
+				CF3673C01A14A7140052F73D /* dislike.png in Resources */,
 				CFFEBB52198F34B6005E96BD /* camera.png in Resources */,
 				CFD57D5619F88B36005E41B8 /* storeacle1.png in Resources */,
 				CFFEBB4A198F31B6005E96BD /* Storyboard.storyboard in Resources */,
+				CF3673BE1A14A3ED0052F73D /* Images.xcassets in Resources */,
 				CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */,
 				CF1150841A1210C300D34042 /* record.png in Resources */,
 				CF6719F619F61A730074EC10 /* storeacle.png in Resources */,
+				CF3673C61A14AE5E0052F73D /* stop.png in Resources */,
 				CF58E94C19F5BF9500D1962E /* Question_mark.png in Resources */,
 				CF58E94E19F5C00700D1962E /* carter.png in Resources */,
 				CFFEBB59198F3538005E96BD /* beats.png in Resources */,
@@ -427,14 +471,18 @@
 				CFB7572A198F4A4C007226E7 /* RegisterViewController.m in Sources */,
 				CFFEBB27198F3186005E96BD /* main.m in Sources */,
 				CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */,
+				CF3673BB1A14A2270052F73D /* RSTMALLImageView.m in Sources */,
 				CFCFE9AA1992159D0099E9DA /* FriendsViewController.m in Sources */,
 				CF6719FE19F7473D0074EC10 /* TabBarViewController.m in Sources */,
+				CF3673BA1A14A2270052F73D /* RSTMALLData.m in Sources */,
 				CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */,
 				CFFEBB2B198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m in Sources */,
 				CFB75727198F4A3C007226E7 /* ListViewController.m in Sources */,
 				CFCFE9A71992080F0099E9DA /* EditFriendsViewController.m in Sources */,
 				CF58E94419F592E800D1962E /* SettingsViewController.m in Sources */,
 				CF58E94119F5929A00D1962E /* Barcode.m in Sources */,
+				CF3673BC1A14A2270052F73D /* RSTMALLTableViewController.m in Sources */,
+				CF3673B91A14A2270052F73D /* RSTMALLCell.m in Sources */,
 				CFFEBB6C198F4621005E96BD /* InboxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +614,7 @@
 				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
 				INFOPLIST_FILE = "Beatlet1/Beatlet1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -589,6 +638,7 @@
 				GCC_PREFIX_HEADER = "Beatlet1/Beatlet1-Prefix.pch";
 				INFOPLIST_FILE = "Beatlet1/Beatlet1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -636,7 +686,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */ = {
+		CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet12" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFFEBB41198F3186005E96BD /* Debug */,

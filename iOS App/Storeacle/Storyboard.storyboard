@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="1672" y="221"/>
         </scene>
-        <!--Inbox View Controller - Inbox-->
+        <!--Table View Controller - Inbox-->
         <scene sceneID="s4d-5j-H11">
             <objects>
-                <tableViewController title="Inbox" id="hSr-U6-XVw" customClass="InboxViewController" sceneMemberID="viewController">
+                <tableViewController title="Inbox" id="hSr-U6-XVw" customClass="RSTMALLTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="l3D-d2-1dQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,11 +287,11 @@
             </objects>
             <point key="canvasLocation" x="2042" y="-511"/>
         </scene>
-        <!--Navigation Controller - Cart-->
+        <!--Navigation Controller - Catalog-->
         <scene sceneID="9o8-8X-0Sp">
             <objects>
-                <navigationController title="Cart" automaticallyAdjustsScrollViewInsets="NO" id="yxJ-WF-vAi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="carter.png" id="isJ-W6-bZy"/>
+                <navigationController title="Catalog" automaticallyAdjustsScrollViewInsets="NO" id="yxJ-WF-vAi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Catalog" image="catalog.png" id="isJ-W6-bZy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XaI-cg-Pa4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -373,7 +373,7 @@
                                     <action selector="askWatson:" destination="MWV-q7-69c" eventType="touchUpInside" id="6CQ-0P-ECe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask me about products?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-8d-zTm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask me about products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-8d-zTm">
                                 <rect key="frame" x="20" y="74" width="280" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -381,7 +381,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="record.png" translatesAutoresizingMaskIntoConstraints="NO" id="4pu-Kd-glc">
-                                <rect key="frame" x="120" y="414" width="80" height="80"/>
+                                <rect key="frame" x="130" y="444" width="55" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Eg. Does the Xbox One have blu-ray?" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P1w-E7-V28">
@@ -391,15 +391,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-Fx-XvK">
-                                <rect key="frame" x="32" y="170" width="244" height="228"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BV-io-CYG">
-                                <rect key="frame" x="120" y="414" width="80" height="80"/>
+                                <rect key="frame" x="130" y="444" width="55" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -408,12 +401,33 @@
                                     <action selector="recordButtonAction:" destination="MWV-q7-69c" eventType="touchUpInside" id="Jfh-QF-j2x"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-hr-shx">
+                                <rect key="frame" x="35" y="159" width="251" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.97431231169999999" blue="0.75595448330000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fT9-kW-CaW"/>
+                    <navigationItem key="navigationItem" id="fT9-kW-CaW">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xaj-n4-eLt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ba0-MI-0Jw">
+                                <rect key="frame" x="269" y="7" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="dislike.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="dislikeAction:" destination="MWV-q7-69c" id="V5W-oK-wcv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="answerLabel" destination="tmM-Fx-XvK" id="C0I-gQ-Thh"/>
+                        <outlet property="answerLabel" destination="fU4-hr-shx" id="1XX-75-Ag9"/>
                         <outlet property="questionLabel" destination="P1w-E7-V28" id="G4d-wC-F8n"/>
                         <outlet property="recordIcon" destination="4pu-Kd-glc" id="gtC-V3-Fz6"/>
                     </connections>
@@ -443,7 +457,8 @@
     <resources>
         <image name="Question_mark.png" width="30" height="30"/>
         <image name="barcode.png" width="40" height="40"/>
-        <image name="carter.png" width="42" height="42"/>
+        <image name="catalog.png" width="40" height="40"/>
+        <image name="dislike.png" width="105" height="90"/>
         <image name="record.png" width="167" height="167"/>
         <image name="storeacle1.png" width="600" height="225"/>
     </resources>

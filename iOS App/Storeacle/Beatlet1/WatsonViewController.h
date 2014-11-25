@@ -7,13 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpeechKit/SpeechKit.h>
+@import AVFoundation;
 
-@interface WatsonViewController : UIViewController
+@interface WatsonViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate, SKVocalizerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *questionLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *answerLabel;
+- (IBAction)dislikeAction:(id)sender;
+
 @property (retain, nonatomic) NSMutableData *receivedData;
 
 - (IBAction)askWatson:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+- (IBAction)recordButtonAction:(id)sender;
 
-
+@property (readonly) SKRecognizer* voiceSearch;
+@property (weak, nonatomic) IBOutlet UIImageView *recordIcon;
+@property (weak, nonatomic) UIImage* recording;
+@property (weak, nonatomic) UIImage* notRecording;
+@property (weak, nonatomic) UIImage* playing;
+@property (strong, nonatomic) SKVocalizer* vocalizer;
+@property (weak, nonatomic) NSString* status;
 @end

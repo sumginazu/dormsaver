@@ -5,6 +5,7 @@ import json
 import unicodedata
 from amazonproduct import API
 import nltk
+from summarizer import *
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr
@@ -39,7 +40,7 @@ def handler(clientsocket, clientaddr):
                 except:
                     print "error"
                 print u"%s" % (result.Items.Item.ItemAttributes.Title)
-            
+
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
             payload = {'question': {'questionText': data}}
@@ -47,6 +48,7 @@ def handler(clientsocket, clientaddr):
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
             print msg
+            msg = summarize(j)
             f = open("question.txt",'w')
             f.write(data)
             f.close()

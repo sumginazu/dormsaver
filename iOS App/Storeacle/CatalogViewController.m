@@ -29,6 +29,7 @@
 {
     NSArray *tableViewValues;
     NSMutableDictionary *dictX;
+    NSMutableDictionary *prices;
     NSArray *tableViewImages;
     UIScrollView *sView;
 }
@@ -79,17 +80,42 @@
     
     //code to load the data
     NSArray *lines;
+    NSArray *priceArray;
     NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/recommendations.txt";
    // NSMutableCharacterSet *_alnum = [NSMutableCharacterSet characterSetWithCharactersInString:@"_"];
-
+    NSString *pricepath =@"Users/abdelwahabbourai/Documents/dormsaver/prices.txt";
     NSString *s = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:NULL];
+    NSString *t = [NSString stringWithContentsOfFile:pricepath encoding:NSUTF8StringEncoding error:NULL];
+
     lines = [s componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
+    priceArray = [t componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
+
     // NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     dictX = [NSMutableDictionary new];
+    prices = [NSMutableDictionary new];
     NSMutableArray *final = [[NSMutableArray alloc] init];
+    for(NSString *string in priceArray){
+        NSArray *p = [string componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"@"]];
+        // NSLog(urls[0], urls[1]);
+        //NSLog(urls);
+        //if(sizeof urls == 2){
+        NSString *check = [p lastObject];
+        if([check isEqualToString:p[0]]){
+            
+        }
+        else{
+            //    NSLog(urls[0]);
+            //    NSLog(urls[1]);
+            //[final addObject:p[0]];
+            [prices setValue:p[1] forKey:p[0]];
+        }
+        
+        
+        //}
+    }
     for(NSString *string in lines){
         NSArray *urls = [string componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"$"]];
-        NSLog(urls[0]);
+       // NSLog(urls[0], urls[1]);
         //NSLog(urls);
         //if(sizeof urls == 2){
                 NSString *check = [urls lastObject];
@@ -154,14 +180,18 @@
     cell.textColor= whiteColor;
     //cell.textLabel.numberOfLines = 0;
    // cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    NSString *url = [NSURL URLWithString: [dictX objectForKey:[tableViewImages objectAtIndex:indexPath.row]]];
-    NSLog(url);
+    NSString *url = [NSURL URLWithString: [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]]];
+    NSLog([dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]]);
     //cell.imageView.image = [UIImage imageNamed: imageData];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    cell.imageView.image = img;//[UIImage imageWithData: imageData];
     cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @"$5";
+    //NSLog(cell.textLabel.text);
+    NSLog([prices objectForKey:[tableViewValues objectAtIndex:indexPath.row]]);
+    cell.detailTextLabel.text = [prices objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
     cell.detailTextLabel.textColor = grayColor;
-   // cell.imageView.image = [UIImage imageNamed: imageData];
-    
+    //cell.imageView.image = [UIImage imageNamed:@"creme_brulee.jpg" ];
     return cell;
 }
 

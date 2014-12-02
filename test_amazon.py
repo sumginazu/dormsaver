@@ -21,7 +21,7 @@ print d[0][0]
 
 f = open("recommendations.txt", "w")
 count = 0
-
+g = open("prices.txt", "w")
 for item in items:
     a = item.ASIN
     result = api.item_lookup(str(a))
@@ -33,11 +33,15 @@ for item in items:
         for b in result.Items.Item:
             print '%s (%s)' % (b.ItemAttributes.Title, b.ASIN)
             image = api.item_lookup(str(b.ASIN), ResponseGroup = "Images")
+            price = api.item_lookup(str(b.ASIN), ResponseGroup = "Offers")
             for i in image.Items.Item:
                 print '%s' % i.LargeImage.URL
-                f.write("%s $ %s\n" % (b.ItemAttributes.Title, i.LargeImage.URL))
-                
-    except:
-        print "error"
+                if(i.LargeImage.URL != None):
+                    f.write("%s $ %s\n" % (b.ItemAttributes.Title, i.LargeImage.URL))
+            for i in price.Items.Item:
+                print '%s' % i.OfferSummary.LowestNewPrice.FormattedPrice
+                g.write("%s @ %s\n" % (b.ItemAttributes.Title, i.OfferSummary.LowestNewPrice.FormattedPrice))
+    except Exception,e:
+        print str(e)
 
 f.close()

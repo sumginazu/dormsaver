@@ -26,18 +26,21 @@ for item in items:
     a = item.ASIN
     result = api.item_lookup(str(a))
     
-    for i in result.Items.Item:
-        print '%s (%s) in group' % (i.ItemAttributes.Title, i.ASIN)
+    #for i in result.Items.Item:
+        #print '%s (%s) in group' % (i.ItemAttributes.Title, i.ASIN)
     try:
         result = api.similarity_lookup(str(a))
         for b in result.Items.Item:
-            print '%s (%s)' % (b.ItemAttributes.Title, b.ASIN)
+            #  print '%s (%s)' % (b.ItemAttributes.Title, b.ASIN)
+            if count >= 20:
+                break
             image = api.item_lookup(str(b.ASIN), ResponseGroup = "Images")
             price = api.item_lookup(str(b.ASIN), ResponseGroup = "Offers")
             for i in image.Items.Item:
-                print '%s' % i.LargeImage.URL
+                #   print '%s' % i.LargeImage.URL
                 if(i.LargeImage.URL != None):
                     f.write("%s $ %s\n" % (b.ItemAttributes.Title, i.LargeImage.URL))
+                    count += 1
             for i in price.Items.Item:
                 print '%s' % i.OfferSummary.LowestNewPrice.FormattedPrice
                 g.write("%s @ %s\n" % (b.ItemAttributes.Title, i.OfferSummary.LowestNewPrice.FormattedPrice))
@@ -45,3 +48,4 @@ for item in items:
         print str(e)
 
 f.close()
+g.close()

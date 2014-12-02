@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CatalogViewController.m"
-            timestampString = "439180839.406232"
+            timestampString = "439204828.683063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "@implementation CatalogViewController"
             landmarkType = "3">
          </BreakpointContent>

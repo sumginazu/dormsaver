@@ -180,21 +180,34 @@
     cell.textColor= whiteColor;
     //cell.textLabel.numberOfLines = 0;
    // cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    NSString *url = [NSURL URLWithString: [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]]];
-    NSLog([dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]]);
-    //cell.imageView.image = [UIImage imageNamed: imageData];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc] initWithData:data];
-    cell.imageView.image = img;//[UIImage imageWithData: imageData];
+    NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
+    //NSString *urlpath = [url stringByAppendingString:@".jpg"];
+    NSString* theFileName = [[url lastPathComponent] stringByDeletingPathExtension];
+    NSString *myExtension = [url pathExtension];
+    NSString *imagepath = [theFileName stringByAppendingString:@"."];
+    
+    imagepath = [imagepath stringByAppendingString:myExtension];
+    NSLog(imagepath);
+    cell.imageView.image = [UIImage imageNamed: imagepath];
     cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
     //NSLog(cell.textLabel.text);
     NSLog([prices objectForKey:[tableViewValues objectAtIndex:indexPath.row]]);
     cell.detailTextLabel.text = [prices objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
     cell.detailTextLabel.textColor = grayColor;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+
     //cell.imageView.image = [UIImage imageNamed:@"creme_brulee.jpg" ];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
+    NSLog(url);
+    // [[UIApplication sharedApplication] openURL:url];
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+
+}
 
 - (IBAction)signout:(id)sender {
     [PFUser logOut];

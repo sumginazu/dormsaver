@@ -9,51 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Beatlet1/InboxViewController.m"
-            timestampString = "428819936.393407"
+            filePath = "Beatlet1/FriendsViewController.m"
+            timestampString = "438637405.282031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "@interface InboxViewController()"
-            landmarkType = "2">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Beatlet1/WatsonViewController.m"
-            timestampString = "437459069.733287"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-<<<<<<< HEAD
-            landmarkName = "@implementation WatsonViewController"
-            landmarkType = "3">
-=======
-            landmarkName = "-initWithNibName:bundle:"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Beatlet1/WatsonViewController.m"
-            timestampString = "437459069.733287"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-askWatson:"
-            landmarkType = "5">
->>>>>>> 7f1fe0baa3955dc379fc6cd30d24fbd83acaad27
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

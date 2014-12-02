@@ -10,7 +10,7 @@
 #import <SpeechKit/SpeechKit.h>
 @import AVFoundation;
 
-@interface WatsonViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate, SKVocalizerDelegate>
+@interface OracleViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate, SKVocalizerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *questionLabel;
 
 @property (weak, nonatomic) IBOutlet UITextView *answerLabel;

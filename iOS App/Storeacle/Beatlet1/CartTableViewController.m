@@ -1,23 +1,38 @@
 //
-//  InboxViewController.m
-//  Beatlet1
+//  CartTableViewController.m
+//  Beatlet12
 //
-//  Created by Sudev Bohra on 8/3/14.
+//  Created by Sudev Bohra on 11/25/14.
 //  Copyright (c) 2014 Sudev Bohra. All rights reserved.
 //
 
-#import "InboxViewController.h"
+#import "CartTableViewController.h"
 #import <Parse/Parse.h>
-
-@interface InboxViewController ()
+@interface CartTableViewController ()
 
 @end
 
-@implementation InboxViewController
+@implementation CartTableViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser);
@@ -30,12 +45,6 @@
     UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
     [[self view] setBackgroundColor:color];
     self.navigationController.navigationBar.barTintColor = color1;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,30 +119,14 @@
 */
 
 /*
-#pragma mark - Table view delegate
+#pragma mark - Navigation
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
+    // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 
-- (IBAction)signout:(id)sender {
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showLogin"]){
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-    }
-}
 @end

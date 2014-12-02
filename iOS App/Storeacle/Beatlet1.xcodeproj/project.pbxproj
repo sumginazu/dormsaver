@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AB62AE91A277A0E008A94B3 /* creme_brulee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AB62AE81A277A0E008A94B3 /* creme_brulee.jpg */; };
+		CF021AAA1A2513A700EF0353 /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF021AA91A2513A700EF0353 /* CartTableViewController.m */; };
+		CF021AAE1A2516ED00EF0353 /* genius_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF021AAD1A2516ED00EF0353 /* genius_icon.png */; };
+		CF021AB01A25172400EF0353 /* genius_icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CF021AAF1A25172400EF0353 /* genius_icon_small.png */; };
 		CF114FA51A11FEA400D34042 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF114FA41A11FEA400D34042 /* AVFoundation.framework */; };
 		CF1150801A11FEEB00D34042 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF11507F1A11FEEB00D34042 /* SpeechKit.framework */; };
 		CF1150831A1210C300D34042 /* record1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1150811A1210C300D34042 /* record1.png */; };
@@ -20,7 +24,7 @@
 		CF3673C41A14AAEE0052F73D /* catalog.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3673C31A14AAEE0052F73D /* catalog.png */; };
 		CF3673C61A14AE5E0052F73D /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3673C51A14AE5E0052F73D /* stop.png */; };
 		CF560F2F19F5C83B0084F3E3 /* Microphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */; };
-		CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */; };
+		CF560F3E19F5D0850084F3E3 /* OracleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560F3D19F5D0850084F3E3 /* OracleViewController.m */; };
 		CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E93D19F5927400D1962E /* ScannerViewController.m */; };
 		CF58E94119F5929A00D1962E /* Barcode.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E94019F5929A00D1962E /* Barcode.m */; };
 		CF58E94419F592E800D1962E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF58E94319F592E800D1962E /* SettingsViewController.m */; };
@@ -66,8 +70,8 @@
 		CFFEBB56198F34B6005E96BD /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB50198F34B6005E96BD /* inbox.png */; };
 		CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB51198F34B6005E96BD /* inbox@2x.png */; };
 		CFFEBB59198F3538005E96BD /* beats.png in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB58198F3538005E96BD /* beats.png */; };
-		CFFEBB6C198F4621005E96BD /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB6A198F4621005E96BD /* InboxViewController.m */; };
-		CFFEBB6D198F4621005E96BD /* InboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB6B198F4621005E96BD /* InboxViewController.xib */; };
+		CFFEBB6C198F4621005E96BD /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBB6A198F4621005E96BD /* CatalogViewController.m */; };
+		CFFEBB6D198F4621005E96BD /* CatalogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFEBB6B198F4621005E96BD /* CatalogViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8AB62AE81A277A0E008A94B3 /* creme_brulee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = creme_brulee.jpg; path = ../../../../creme_brulee.jpg; sourceTree = "<group>"; };
+		CF021AA81A2513A700EF0353 /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
+		CF021AA91A2513A700EF0353 /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
+		CF021AAD1A2516ED00EF0353 /* genius_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genius_icon.png; sourceTree = "<group>"; };
+		CF021AAF1A25172400EF0353 /* genius_icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genius_icon_small.png; sourceTree = "<group>"; };
 		CF114FA41A11FEA400D34042 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CF11507F1A11FEEB00D34042 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
 		CF1150811A1210C300D34042 /* record1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record1.png; sourceTree = "<group>"; };
@@ -98,8 +107,8 @@
 		CF3673C31A14AAEE0052F73D /* catalog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalog.png; sourceTree = "<group>"; };
 		CF3673C51A14AE5E0052F73D /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		CF560F2E19F5C83B0084F3E3 /* Microphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-icon.png"; sourceTree = "<group>"; };
-		CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatsonViewController.h; sourceTree = "<group>"; };
-		CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatsonViewController.m; sourceTree = "<group>"; };
+		CF560F3C19F5D0850084F3E3 /* OracleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OracleViewController.h; sourceTree = "<group>"; };
+		CF560F3D19F5D0850084F3E3 /* OracleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OracleViewController.m; sourceTree = "<group>"; };
 		CF58E93C19F5927400D1962E /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		CF58E93D19F5927400D1962E /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		CF58E93F19F5929A00D1962E /* Barcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barcode.h; sourceTree = "<group>"; };
@@ -158,9 +167,9 @@
 		CFFEBB50198F34B6005E96BD /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
 		CFFEBB51198F34B6005E96BD /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		CFFEBB58198F3538005E96BD /* beats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beats.png; sourceTree = "<group>"; };
-		CFFEBB69198F4621005E96BD /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxViewController.h; path = ../InboxViewController.h; sourceTree = "<group>"; };
-		CFFEBB6A198F4621005E96BD /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxViewController.m; path = ../InboxViewController.m; sourceTree = "<group>"; };
-		CFFEBB6B198F4621005E96BD /* InboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InboxViewController.xib; path = ../InboxViewController.xib; sourceTree = "<group>"; };
+		CFFEBB69198F4621005E96BD /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CatalogViewController.h; path = ../CatalogViewController.h; sourceTree = "<group>"; };
+		CFFEBB6A198F4621005E96BD /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CatalogViewController.m; path = ../CatalogViewController.m; sourceTree = "<group>"; };
+		CFFEBB6B198F4621005E96BD /* CatalogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CatalogViewController.xib; path = ../CatalogViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,17 +288,19 @@
 				CFCFE9A61992080E0099E9DA /* EditFriendsViewController.m */,
 				CFCFE9A81992159D0099E9DA /* FriendsViewController.h */,
 				CFCFE9A91992159D0099E9DA /* FriendsViewController.m */,
-				CFFEBB69198F4621005E96BD /* InboxViewController.h */,
-				CFFEBB6A198F4621005E96BD /* InboxViewController.m */,
-				CFFEBB6B198F4621005E96BD /* InboxViewController.xib */,
+				CFFEBB69198F4621005E96BD /* CatalogViewController.h */,
+				CFFEBB6A198F4621005E96BD /* CatalogViewController.m */,
+				CFFEBB6B198F4621005E96BD /* CatalogViewController.xib */,
 				CFFEBB29198F3186005E96BD /* Beatlet_PrototypeAppDelegate.h */,
 				CFFEBB2A198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m */,
 				CFFEBB2C198F3186005E96BD /* Images.xcassets */,
 				CFFEBB21198F3186005E96BD /* Supporting Files */,
-				CF560F3C19F5D0850084F3E3 /* WatsonViewController.h */,
-				CF560F3D19F5D0850084F3E3 /* WatsonViewController.m */,
+				CF560F3C19F5D0850084F3E3 /* OracleViewController.h */,
+				CF560F3D19F5D0850084F3E3 /* OracleViewController.m */,
 				CF6719FC19F7473D0074EC10 /* TabBarViewController.h */,
 				CF6719FD19F7473D0074EC10 /* TabBarViewController.m */,
+				CF021AA81A2513A700EF0353 /* CartTableViewController.h */,
+				CF021AA91A2513A700EF0353 /* CartTableViewController.m */,
 			);
 			path = Beatlet1;
 			sourceTree = "<group>";
@@ -326,6 +337,9 @@
 		CFFEBB4B198F34B6005E96BD /* tab_bar_icons */ = {
 			isa = PBXGroup;
 			children = (
+				8AB62AE81A277A0E008A94B3 /* creme_brulee.jpg */,
+				CF021AAF1A25172400EF0353 /* genius_icon_small.png */,
+				CF021AAD1A2516ED00EF0353 /* genius_icon.png */,
 				CF3673C51A14AE5E0052F73D /* stop.png */,
 				CF3673C31A14AAEE0052F73D /* catalog.png */,
 				CF1150811A1210C300D34042 /* record1.png */,
@@ -402,7 +416,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet12" */;
+			buildConfigurationList = CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -433,21 +447,24 @@
 				CF58E94819F598CA00D1962E /* side-menu-cart.png in Resources */,
 				CFFEBB53198F34B6005E96BD /* camera@2x.png in Resources */,
 				CFFEBB56198F34B6005E96BD /* inbox.png in Resources */,
-				CFFEBB6D198F4621005E96BD /* InboxViewController.xib in Resources */,
+				CFFEBB6D198F4621005E96BD /* CatalogViewController.xib in Resources */,
 				CF58E94A19F5993300D1962E /* cart.png in Resources */,
 				CF58E94619F5988D00D1962E /* barcode.png in Resources */,
 				CF1150831A1210C300D34042 /* record1.png in Resources */,
 				CFFEBB2D198F3186005E96BD /* Images.xcassets in Resources */,
+				CF021AAE1A2516ED00EF0353 /* genius_icon.png in Resources */,
 				CF3673C01A14A7140052F73D /* dislike.png in Resources */,
 				CFFEBB52198F34B6005E96BD /* camera.png in Resources */,
 				CFD57D5619F88B36005E41B8 /* storeacle1.png in Resources */,
 				CFFEBB4A198F31B6005E96BD /* Storyboard.storyboard in Resources */,
 				CF3673BE1A14A3ED0052F73D /* Images.xcassets in Resources */,
 				CFFEBB57198F34B6005E96BD /* inbox@2x.png in Resources */,
+				CF021AB01A25172400EF0353 /* genius_icon_small.png in Resources */,
 				CF1150841A1210C300D34042 /* record.png in Resources */,
 				CF6719F619F61A730074EC10 /* storeacle.png in Resources */,
 				CF3673C61A14AE5E0052F73D /* stop.png in Resources */,
 				CF58E94C19F5BF9500D1962E /* Question_mark.png in Resources */,
+				8AB62AE91A277A0E008A94B3 /* creme_brulee.jpg in Resources */,
 				CF58E94E19F5C00700D1962E /* carter.png in Resources */,
 				CFFEBB59198F3538005E96BD /* beats.png in Resources */,
 			);
@@ -468,9 +485,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF021AAA1A2513A700EF0353 /* CartTableViewController.m in Sources */,
 				CFB7572A198F4A4C007226E7 /* RegisterViewController.m in Sources */,
 				CFFEBB27198F3186005E96BD /* main.m in Sources */,
-				CF560F3E19F5D0850084F3E3 /* WatsonViewController.m in Sources */,
+				CF560F3E19F5D0850084F3E3 /* OracleViewController.m in Sources */,
 				CF3673BB1A14A2270052F73D /* RSTMALLImageView.m in Sources */,
 				CFCFE9AA1992159D0099E9DA /* FriendsViewController.m in Sources */,
 				CF6719FE19F7473D0074EC10 /* TabBarViewController.m in Sources */,
@@ -483,7 +501,7 @@
 				CF58E94119F5929A00D1962E /* Barcode.m in Sources */,
 				CF3673BC1A14A2270052F73D /* RSTMALLTableViewController.m in Sources */,
 				CF3673B91A14A2270052F73D /* RSTMALLCell.m in Sources */,
-				CFFEBB6C198F4621005E96BD /* InboxViewController.m in Sources */,
+				CFFEBB6C198F4621005E96BD /* CatalogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +704,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet12" */ = {
+		CFFEBB12198F3185005E96BD /* Build configuration list for PBXProject "Beatlet1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFFEBB41198F3186005E96BD /* Debug */,

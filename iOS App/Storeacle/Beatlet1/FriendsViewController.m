@@ -27,18 +27,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
-    PFQuery *query = [self.friendsRelation query];
-    [query orderByAscending:@"username"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        else {
-            self.friends = objects;
-            [self.tableView reloadData];
-        }
-    }];
+//    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+//    PFQuery *query = [self.friendsRelation query];
+//    [query orderByAscending:@"username"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//        else {
+//            self.friends = objects;
+//            [self.tableView reloadData];
+//        }
+//    }];
     
     
     
@@ -51,10 +51,10 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"showEditFriends"]){
-        EditFriendsViewController *viewController = (EditFriendsViewController *)segue.destinationViewController;
-        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
-    }
+//    if ([segue.identifier isEqualToString:@"showEditFriends"]){
+//        EditFriendsViewController *viewController = (EditFriendsViewController *)segue.destinationViewController;
+//        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
+//    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,18 +75,19 @@
 {
 
     // Return the number of rows in the section.
-    return [self.friends count];
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Friends-cell" forIndexPath:indexPath];
-    
-    PFUser *user = [self.friends objectAtIndex:indexPath.row];
-    cell.textLabel.text = user.username;
-    
-    return cell;
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Friends-cell" forIndexPath:indexPath];
+//    
+//    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+//    cell.textLabel.text = user.username;
+//    
+//    return cell;
+    return 0;
 }
 
 

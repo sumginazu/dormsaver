@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DXw-06-GnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DXw-06-GnY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -18,6 +18,7 @@
                         <segue destination="upH-Cu-0yi" kind="relationship" relationship="viewControllers" id="Svt-5x-uaK"/>
                         <segue destination="aSZ-6m-1rd" kind="relationship" relationship="viewControllers" id="M8H-a0-Cch"/>
                         <segue destination="yxJ-WF-vAi" kind="relationship" relationship="viewControllers" id="Rdo-LI-gzN"/>
+                        <segue destination="WkL-LD-pYh" kind="relationship" relationship="viewControllers" id="DHH-4C-ILO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUv-8x-63E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="1672" y="221"/>
         </scene>
-        <!--Table View Controller - Inbox-->
+        <!--Catalog View Controller - Inbox-->
         <scene sceneID="s4d-5j-H11">
             <objects>
-                <tableViewController title="Inbox" id="hSr-U6-XVw" customClass="RSTMALLTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Inbox" id="hSr-U6-XVw" customClass="CatalogViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="l3D-d2-1dQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +143,7 @@
                             <outlet property="delegate" destination="hSr-U6-XVw" id="OHe-qk-3cL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Storeacle" id="yPt-rk-Bl7">
+                    <navigationItem key="navigationItem" title="Catalog" id="yPt-rk-Bl7">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="opX-rO-Lwm">
                             <connections>
                                 <action selector="signout:" destination="hSr-U6-XVw" id="3sN-GP-p6L"/>
@@ -150,6 +151,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="l3D-d2-1dQ" id="jF0-gE-tPO"/>
                         <segue destination="WEP-pv-pE7" kind="push" identifier="showLogin" id="SdD-Ov-DcX"/>
                     </connections>
                 </tableViewController>
@@ -306,11 +308,11 @@
             </objects>
             <point key="canvasLocation" x="695" y="-501"/>
         </scene>
-        <!--Navigation Controller - Storeacle-->
+        <!--Navigation Controller - Oracle-->
         <scene sceneID="GjD-w9-srQ">
             <objects>
-                <navigationController title="Storeacle" automaticallyAdjustsScrollViewInsets="NO" id="aSZ-6m-1rd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watson" image="Question_mark.png" id="bbR-hC-wwH"/>
+                <navigationController title="Oracle" automaticallyAdjustsScrollViewInsets="NO" id="aSZ-6m-1rd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Oracle" image="genius_icon_small.png" id="bbR-hC-wwH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qth-kW-MNI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -342,12 +344,57 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjQ-B8-vmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="897"/>
+            <point key="canvasLocation" x="749" y="905"/>
         </scene>
-        <!--Watson View Controller-->
+        <!--Cart Table View Controller - Cart-->
+        <scene sceneID="NOu-2c-uiV">
+            <objects>
+                <tableViewController id="rJD-cu-w3L" customClass="CartTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="e24-Rs-rFc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="peW-Qt-ct1">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="peW-Qt-ct1" id="gGF-1K-I9x">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rJD-cu-w3L" id="Uah-ms-v7W"/>
+                            <outlet property="delegate" destination="rJD-cu-w3L" id="WcT-zW-Q0S"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cart" id="Ra5-bk-IC5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKL-8C-MMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739" y="1586"/>
+        </scene>
+        <!--Navigation Controller - Blue-->
+        <scene sceneID="efM-pf-q9m">
+            <objects>
+                <navigationController title="Blue" definesPresentationContext="YES" id="WkL-LD-pYh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="carter.png" id="A9L-oR-d62"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5gM-wf-N7i">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rJD-cu-w3L" kind="relationship" relationship="rootViewController" id="VzR-k0-wPq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvY-M3-Qh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="1566"/>
+        </scene>
+        <!--Oracle View Controller - Oracle-->
         <scene sceneID="NWA-pV-JxF">
             <objects>
-                <viewController id="MWV-q7-69c" customClass="WatsonViewController" sceneMemberID="viewController">
+                <viewController id="MWV-q7-69c" customClass="OracleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vm6-gY-Hoa"/>
                         <viewControllerLayoutGuide type="bottom" id="bVj-l1-gGQ"/>
@@ -412,7 +459,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fT9-kW-CaW">
+                    <navigationItem key="navigationItem" title="Oracle" id="fT9-kW-CaW">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Xaj-n4-eLt">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ba0-MI-0Jw">
                                 <rect key="frame" x="269" y="7" width="35" height="30"/>
@@ -436,29 +483,13 @@
             </objects>
             <point key="canvasLocation" x="1307" y="877"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NqN-tZ-sQt">
-            <objects>
-                <viewController id="LJP-xD-EO7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NiW-QI-Yt0"/>
-                        <viewControllerLayoutGuide type="bottom" id="2ix-A0-3nT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BpI-4f-Hul">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="buB-iH-Aar" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
-        <image name="Question_mark.png" width="30" height="30"/>
         <image name="barcode.png" width="40" height="40"/>
+        <image name="carter.png" width="42" height="42"/>
         <image name="catalog.png" width="40" height="40"/>
         <image name="dislike.png" width="105" height="90"/>
+        <image name="genius_icon_small.png" width="40" height="40"/>
         <image name="record.png" width="167" height="167"/>
         <image name="storeacle1.png" width="600" height="225"/>
     </resources>

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Sudev Bohra. All rights reserved.
 //
 
-#import "WatsonViewController.h"
+#import "OracleViewController.h"
 #import "GCDAsyncSocket.h"
 
 
@@ -17,11 +17,11 @@ const unsigned char SpeechKitApplicationKey[] =
 
 
 
-@interface WatsonViewController ()
+@interface OracleViewController ()
 
 @end
 
-@implementation WatsonViewController
+@implementation OracleViewController
 
 @synthesize answerLabel,vocalizer, playing;
 @synthesize questionLabel, voiceSearch, recordIcon, recording, notRecording, status;
@@ -79,7 +79,7 @@ NSMutableData *mutData;
 - (IBAction)dislikeAction:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank you for disliking"
                                                     message:@"Now, I can get better at answering your questions."
-                                                   delegate:self
+                                                   delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
@@ -98,7 +98,7 @@ NSMutableData *mutData;
     else
     {
         NSString *host = @"localhost";
-        int port = 3001;
+        int port = 3000;
         CFReadStreamRef readStream;
         CFWriteStreamRef writeStream;
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)(host), port, &readStream, &writeStream);
@@ -119,7 +119,7 @@ NSMutableData *mutData;
             NSLog(@"Written: %d", bytesWritten);
         }
 
-        [NSThread sleepForTimeInterval:1];
+        [NSThread sleepForTimeInterval:2];
         NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/answer.txt";
 
         NSError *error;
@@ -167,41 +167,6 @@ NSMutableData *mutData;
     }
 }
 
-/*- (void)stream:(NSInputStream *)iStream handleEvent:(NSStreamEvent)event {
-    BOOL shouldClose = NO;
-    NSLog(@"entered");
-    switch(event) {
-        case  NSStreamEventEndEncountered:
-            shouldClose = YES;
-            // If all data hasn't been read, fall through to the "has bytes" event
-            if(![iStream hasBytesAvailable]) break;
-        case NSStreamEventHasBytesAvailable: ; // We need a semicolon here before we can declare local variables
-            uint8_t *buffer;
-            NSUInteger length;
-            BOOL freeBuffer = NO;
-            // The stream has data. Try to get its internal buffer instead of creating one
-            if(![iStream getBuffer:&buffer length:&length]) {
-                // The stream couldn't provide its internal buffer. We have to make one ourselves
-                buffer = malloc(1024 * sizeof(uint8_t));
-                freeBuffer = YES;
-                NSInteger result = [iStream read:buffer maxLength:1024];
-                if(result < 0) {
-                    // error copying to buffer
-                    break;
-                }
-                length = result;
-            }
-            // length bytes of data in buffer
-            if(freeBuffer) free(buffer);
-            break;
-        case NSStreamEventErrorOccurred:
-            // some other error
-            shouldClose = YES;
-            break;
->>>>>>> 7f1fe0baa3955dc379fc6cd30d24fbd83acaad27
-    }
-    if(shouldClose) [iStream close];
-}*/
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {

@@ -49,20 +49,22 @@ def handler(clientsocket, clientaddr):
             for item in d:
                 query += item[0] + " "            
 
-            # get all books from result set and
-            # print author and title
             items = api.item_search('Electronics', Keywords = query, limit=1)
 
-
+            f = open("recommendations.txt", 'w')
 
             for item in items:
                 a = item.ASIN
                 result = api.item_lookup(str(a))
-                #print '%s %s' % (item.ItemAttributes.Title, item.ASIN)
+                print '%s %s' % (item.ItemAttributes.Title, item.ASIN)
+                s =  '%s %s' % (item.ItemAttributes.Title, item.ASIN)
+                f.write(s + '\n')
                 try:
                     result = api.similarity_lookup(str(a))
+
                 except:
                     print "error"
+            f.close()
     clientsocket.close()
 
 if __name__ == "__main__":

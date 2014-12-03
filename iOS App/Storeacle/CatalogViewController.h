@@ -20,6 +20,8 @@
 }
 - (IBAction)signout:(id)sender;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIWebView *myWebView;
+
 @end
 
 

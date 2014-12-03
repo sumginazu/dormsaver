@@ -30,6 +30,8 @@
     NSArray *tableViewValues;
     NSMutableDictionary *dictX;
     NSMutableDictionary *prices;
+    NSMutableDictionary *details;
+
     NSArray *tableViewImages;
     UIScrollView *sView;
 }
@@ -84,12 +86,12 @@
     NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/recommendations.txt";
    // NSMutableCharacterSet *_alnum = [NSMutableCharacterSet characterSetWithCharactersInString:@"_"];
     NSString *pricepath =@"Users/abdelwahabbourai/Documents/dormsaver/prices.txt";
-    NSString *s = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:NULL];
+    NSString *s = [NSString stringWithContentsOfFile:filepath encoding: NSASCIIStringEncoding error:NULL];
+    NSString *decodedText = [s stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(decodedText);
     NSString *t = [NSString stringWithContentsOfFile:pricepath encoding:NSUTF8StringEncoding error:NULL];
-
-    lines = [s componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
+    lines = [decodedText componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
     priceArray = [t componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
-
     // NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     dictX = [NSMutableDictionary new];
     prices = [NSMutableDictionary new];
@@ -127,6 +129,7 @@
         //    NSLog(urls[1]);
             [final addObject:urls[0]];
             [dictX setValue:urls[1] forKey:urls[0]];
+          //  [details setValue:urls[2] forKey:urls[0]];
         }
         
         
@@ -180,15 +183,15 @@
     cell.textColor= whiteColor;
     //cell.textLabel.numberOfLines = 0;
    // cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
+    //NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
     //NSString *urlpath = [url stringByAppendingString:@".jpg"];
-    NSString* theFileName = [[url lastPathComponent] stringByDeletingPathExtension];
-    NSString *myExtension = [url pathExtension];
-    NSString *imagepath = [theFileName stringByAppendingString:@"."];
+    //NSString* theFileName = [[url lastPathComponent] stringByDeletingPathExtension];
+    //NSString *myExtension = [url pathExtension];
+    //NSString *imagepath = [theFileName stringByAppendingString:@"."];
     
-    imagepath = [imagepath stringByAppendingString:myExtension];
-    NSLog(imagepath);
-    cell.imageView.image = [UIImage imageNamed: imagepath];
+    //imagepath = [imagepath stringByAppendingString:myExtension];
+    //NSLog(imagepath);
+    //cell.imageView.image = [UIImage imageNamed: imagepath];
     cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
     //NSLog(cell.textLabel.text);
     NSLog([prices objectForKey:[tableViewValues objectAtIndex:indexPath.row]]);
@@ -204,8 +207,23 @@
 {
     NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
     NSLog(url);
+    NSString *fixedURL = [url stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *encodedText = [fixedURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    
+    
+    NSURL* nUrl = [NSURL URLWithString:encodedText];
+    
+    NSLog(@"%@", [nUrl absoluteURL]);
+    //NSLog(encodedText);
+    //NSURL *u = [ [ NSURL alloc ] initWithString: url ];
+
+    //NSURL * urlu = [[NSURL alloc] initWithString:encodedString];
+   // NSLog(urlu);
+    //NSString *urlpath = [url stringByAppendingString:url];
+    //NSLog(urlpath);
     // [[UIApplication sharedApplication] openURL:url];
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:encodedText]];
 
 }
 

@@ -31,7 +31,7 @@ def handler(clientsocket, clientaddr):
             m = msg.encode('ascii','ignore')
             f.write(m)
             f.close()
-            clientsocket.send(msg)
+            clientsocket.send(m)
 
             b = nltk.word_tokenize(data)
 
@@ -51,19 +51,6 @@ def handler(clientsocket, clientaddr):
 
             items = api.item_search('Electronics', Keywords = query, limit=1)
             
-            #items = api.item_search('Electronics', Keywords = "xbox one", limit=1)
-
-
-            """a = "what is the iPhone like?"
-            b = nltk.word_tokenize(a)
-
-            c = nltk.pos_tag(b)
-            print c
-            d = filter(lambda (a,b): b == 'NNP' or  b == 'NN', c)
-
-            print d[0][0]
-
-            """
 
             f = open("recommendations.txt", "w")
             count = 0
@@ -80,7 +67,6 @@ def handler(clientsocket, clientaddr):
                         #  print '%s (%s)' % (b.ItemAttributes.Title, b.ASIN)
                         if count >= 20:
                             break
-                        print dir(b)
                         image = api.item_lookup(str(b.ASIN), ResponseGroup = "Images")
                         price = api.item_lookup(str(b.ASIN), ResponseGroup = "Offers")
                         for i in image.Items.Item:
@@ -93,7 +79,9 @@ def handler(clientsocket, clientaddr):
                                 h.write(urllib.urlopen(link).read())
                                 h.close()
                                 #urllib.urlretrieve(strb, strb)
-                                f.write("%s $ %s\n" % (b.ItemAttributes.Title, i.LargeImage.URL))
+                                s = "%s $ %s\n" % (b.ItemAttributes.Title, b.DetailPageURL)
+                                stringa = s.encode('ascii','ignore') 
+                                f.write(stringa)
                                 count += 1
                         for i in price.Items.Item:
                             print '%s' % i.OfferSummary.LowestNewPrice.FormattedPrice

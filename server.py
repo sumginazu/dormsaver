@@ -63,7 +63,7 @@ def handler(clientsocket, clientaddr):
                 nouns = get_terms(data)
                 nouns = list(nouns)
                 print nouns
-                if nouns > 0:
+                if len(nouns) > 0:
                     context_noun = ' '.join(nouns[0])
                     print context_noun
                 key = searchFactTable(context_noun)
@@ -158,7 +158,7 @@ def handler(clientsocket, clientaddr):
 if __name__ == "__main__":
 
     host = 'localhost'
-    port = 3001
+    port = 3000
     initialize()
     buf = 1024
 

@@ -7,6 +7,37 @@ from amazonproduct import API
 import nltk
 from summarizer import *
 from nltk_noun_id import *
+from xml.dom import minidom
+
+factTable = {}
+
+def initialize():
+    xmldoc = minidom.parse('product.xml')
+
+
+    itemlist = xmldoc.getElementsByTagName('entry') 
+
+    
+
+    import StringIO
+
+    for s in itemlist :
+        name = s.getElementsByTagName('key')[0].childNodes[0].nodeValue
+        if (len(s.getElementsByTagName('value'))>0):
+            if (len(s.getElementsByTagName('value')[0].childNodes)>0):
+                facts = s.getElementsByTagName('value')[0].childNodes[0].nodeValue
+                s = StringIO.StringIO(facts)
+                factTable[name] = {}
+                for line in s:
+                    fact = line.replace("\n","").split(":")
+                    factTable[name][fact[0].lower()] = fact[1]
+
+
+def searchFactTable(word):
+    word = word.lower()
+    for key in factTable.keys():
+        if word in key:
+            return factTable[key]
 
 def handler(clientsocket, clientaddr):
     context_noun = 'it'
@@ -18,7 +49,7 @@ def handler(clientsocket, clientaddr):
             break
         else:
             print data
-
+            f = open("answer.txt", 'w')
             #substitute and/or update context
             q = nltk.word_tokenize(data)
             if 'it' in q:
@@ -33,6 +64,13 @@ def handler(clientsocket, clientaddr):
                 if nouns > 0:
                     context_noun = ' '.join(nouns[0])
                     print context_noun
+                key = searchFactTable(context_noun)
+                if key != None:
+                    for noun in nouns:
+                        for fact in factTable[key].keys():
+                            if noun.lower() in fact or fact in noun.lower():
+                                f.write("Fact "+ fact + ":" + factTable[key][fact] +"\n")
+                        
 
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -41,10 +79,10 @@ def handler(clientsocket, clientaddr):
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
             print msg
-            f = open("question.txt",'w')
-            f.write(data)
-            f.close()
-            f = open("answer.txt", 'w')
+            q = open("question.txt",'w')
+            q.write(data)
+            q.close()
+            #f = open("answer.txt", 'w')
             m = msg.encode('ascii','ignore')
             f.write(m)
             f.close()

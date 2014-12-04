@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DXw-06-GnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DXw-06-GnY">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Tab Bar View Controller-->
@@ -26,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="120" y="221"/>
         </scene>
-        <!--Friends-->
+        <!--Friends View Controller - Friends-->
         <scene sceneID="erz-0v-V9Z">
             <objects>
                 <tableViewController title="Friends" id="kv0-38-UFs" customClass="FriendsViewController" sceneMemberID="viewController">
@@ -63,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="1275" y="221"/>
         </scene>
-        <!--Add Friends-->
+        <!--Edit Friends View Controller - Add Friends-->
         <scene sceneID="zqd-3j-cke">
             <objects>
                 <tableViewController id="aqa-Wi-pgD" customClass="EditFriendsViewController" sceneMemberID="viewController">
@@ -92,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="1672" y="221"/>
         </scene>
-        <!--Inbox-->
+        <!--Catalog View Controller - Inbox-->
         <scene sceneID="s4d-5j-H11">
             <objects>
                 <tableViewController title="Inbox" id="hSr-U6-XVw" customClass="CatalogViewController" sceneMemberID="viewController">
@@ -131,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="1221" y="-501"/>
         </scene>
-        <!--List-->
+        <!--List View Controller - List-->
         <scene sceneID="0Wu-yQ-2Zi">
             <objects>
                 <viewController title="List" id="WEP-pv-pE7" customClass="ListViewController" sceneMemberID="viewController">
@@ -197,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="1633" y="-511"/>
         </scene>
-        <!--Register-->
+        <!--Register View Controller - Register-->
         <scene sceneID="QfX-eY-FHc">
             <objects>
                 <viewController title="Register" id="ITs-CF-ggO" customClass="RegisterViewController" sceneMemberID="viewController">
@@ -251,7 +250,7 @@
             </objects>
             <point key="canvasLocation" x="2042" y="-511"/>
         </scene>
-        <!--Catalog-->
+        <!--Navigation Controller - Catalog-->
         <scene sceneID="9o8-8X-0Sp">
             <objects>
                 <navigationController title="Catalog" automaticallyAdjustsScrollViewInsets="NO" id="yxJ-WF-vAi" sceneMemberID="viewController">
@@ -270,7 +269,7 @@
             </objects>
             <point key="canvasLocation" x="695" y="-501"/>
         </scene>
-        <!--Oracle-->
+        <!--Navigation Controller - Oracle-->
         <scene sceneID="GjD-w9-srQ">
             <objects>
                 <navigationController title="Oracle" automaticallyAdjustsScrollViewInsets="NO" id="aSZ-6m-1rd" sceneMemberID="viewController">
@@ -289,7 +288,7 @@
             </objects>
             <point key="canvasLocation" x="749" y="221"/>
         </scene>
-        <!--Storeacle-->
+        <!--Navigation Controller - Storeacle-->
         <scene sceneID="zgQ-Ev-jPS">
             <objects>
                 <navigationController title="Storeacle" automaticallyAdjustsScrollViewInsets="NO" id="upH-Cu-0yi" sceneMemberID="viewController">
@@ -308,7 +307,7 @@
             </objects>
             <point key="canvasLocation" x="749" y="905"/>
         </scene>
-        <!--Cart-->
+        <!--Cart Table View Controller - Cart-->
         <scene sceneID="NOu-2c-uiV">
             <objects>
                 <tableViewController id="rJD-cu-w3L" customClass="CartTableViewController" sceneMemberID="viewController">
@@ -339,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="739" y="1586"/>
         </scene>
-        <!--Blue-->
+        <!--Navigation Controller - Blue-->
         <scene sceneID="efM-pf-q9m">
             <objects>
                 <navigationController title="Blue" definesPresentationContext="YES" id="WkL-LD-pYh" sceneMemberID="viewController">
@@ -355,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="277" y="1566"/>
         </scene>
-        <!--Oracle-->
+        <!--Oracle View Controller - Oracle-->
         <scene sceneID="NWA-pV-JxF">
             <objects>
                 <viewController id="MWV-q7-69c" customClass="OracleViewController" sceneMemberID="viewController">
@@ -441,7 +440,7 @@
             </objects>
             <point key="canvasLocation" x="1307" y="877"/>
         </scene>
-        <!--Search or Scan-->
+        <!--View Controller - Search or Scan-->
         <scene sceneID="JkL-nl-Dj7">
             <objects>
                 <viewController id="VOO-0I-jYQ" sceneMemberID="viewController">
@@ -504,10 +503,10 @@
         <image name="record.png" width="167" height="167"/>
         <image name="storeacle1.png" width="600" height="225"/>
     </resources>
+    <color key="tintColor" red="1" green="0.3679664975994511" blue="0.76406190172135213" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="1" green="0.3679664975994511" blue="0.76406190172135213" alpha="1" colorSpace="calibratedRGB"/>
 </document>

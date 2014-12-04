@@ -129,8 +129,12 @@ NSMutableData *mutData;
             NSLog(@"Error reading file: %@", error.localizedDescription);
         
         
+        
+        NSString *contextpath = @"Users/abdelwahabbourai/Documents/dormsaver/context.txt";
+        NSString *context = [NSString stringWithContentsOfFile:contextpath encoding:NSUTF8StringEncoding error:&error];
         [vocalizer speakString:fileContents];
         [self.answerLabel setText:fileContents];
+        self.navigationController.navigationBar.topItem.title = context;
         [recordIcon setImage:playing];
         
     }

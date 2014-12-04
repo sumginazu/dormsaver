@@ -13,15 +13,12 @@
 @end
 
 @implementation CartTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    NSArray *tableViewValues;
+    NSArray *prices;
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -41,10 +38,15 @@
     else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
     UIColor * color = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
     UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
     [[self view] setBackgroundColor:color];
     self.navigationController.navigationBar.barTintColor = color1;
+    
+    tableViewValues = [NSArray arrayWithObjects:@"Apple MD861ZM/A Thunderbolt Cable - 2.0 M ", @"AmazonBasics 13.3-Inch Laptop Sleeve", @"Cellet Micro USB Retractable Car Charger for Samsung", nil];
+    prices = [NSArray arrayWithObjects:@"28.99 ", @"33.99", @"13.99", nil];
+    NSLog(@"%@",tableViewValues);
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,32 +55,49 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [tableViewValues count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+    }
+    UIColor * aColor = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
+    cell.backgroundColor =  aColor;
+    UIColor * whiteColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+    UIColor * grayColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1.0f];
+    cell.textColor= whiteColor;
     
-    // Configure the cell...
-    
+    //cell.textLabel.numberOfLines = 0;
+    // cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    //NSString *url = [dictX objectForKey:[tableViewValues objectAtIndex:indexPath.row]];
+    //NSString *urlpath = [url stringByAppendingString:@".jpg"];
+    //NSString* theFileName = [[url lastPathComponent] stringByDeletingPathExtension];
+    //NSString *myExtension = [url pathExtension];
+    //NSString *imagepath = [theFileName stringByAppendingString:@"."];
+
+    //imagepath = [imagepath stringByAppendingString:myExtension];
+    //NSLog(imagepath);
+    //cell.imageView.image = [UIImage imageNamed: imagepath];
+    cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [prices objectAtIndex:indexPath.row];
+    cell.detailTextLabel.textColor = grayColor;
+    NSLog(cell.textLabel.text);
     return cell;
+
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

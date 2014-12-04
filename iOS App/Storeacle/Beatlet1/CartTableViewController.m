@@ -43,7 +43,7 @@
     UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
     [[self view] setBackgroundColor:color];
     self.navigationController.navigationBar.barTintColor = color1;
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     tableViewValues = [NSArray arrayWithObjects:@"Apple MD861ZM/A Thunderbolt Cable - 2.0 M ", @"AmazonBasics 13.3-Inch Laptop Sleeve", @"Cellet Micro USB Retractable Car Charger for Samsung", nil];
     prices = [NSArray arrayWithObjects:@"28.99 ", @"33.99", @"13.99", nil];
     NSLog(@"%@",tableViewValues);

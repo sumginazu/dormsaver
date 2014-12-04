@@ -7,7 +7,7 @@ from amazonproduct import API
 import nltk
 from summarizer import *
 from nltk_noun_id import *
-
+from WordsToNumbers import *
 from xml.dom import minidom
 
 factTable = {}
@@ -47,6 +47,13 @@ def handler(clientsocket, clientaddr):
     while 1:
         data = clientsocket.recv(1024)
         fact_found = False
+        wtn = WordsToNumbers()
+        s = [" one "," two ",' three', ' four', ' five', ' six', 'seven', ' eight', 'nine', ' ten ']
+        for x in s:
+            if x in data:
+                print x, wtn.parse(x)
+                data = data.replace(x, " " + str(wtn.parse(x)),1)
+            print data
         if not data:
             break
         else:
@@ -56,8 +63,10 @@ def handler(clientsocket, clientaddr):
             print context_noun
             f = open("answer.txt", 'w')
             #substitute and/or update context
-            q = nltk.word_tokenize(data)
+            q = nltk.word_tokenize(data.lower())
     #        print "start: " + context_noun 
+            if ' s 5 ' in data:
+                data = data.replace(' s 5 ', 's5', 1)
             if 'it' in q:
                 data = data.replace(' it ', ' %s ' % context_noun, 1)
                 print "updated: " + data
@@ -77,7 +86,6 @@ def handler(clientsocket, clientaddr):
                     y.close()
                  
             key = searchFactTable(context_noun)
-            print "key: " + key
             if key != None:
                 print q
                 for noun in q:

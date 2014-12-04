@@ -54,7 +54,7 @@ const unsigned char SpeechKitApplicationKey[] =
     playing = [UIImage imageNamed: @"stop.png"];
     status = @"";
     vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     // Do any additional setup after loading the view.
 }
 
@@ -128,11 +128,13 @@ NSMutableData *mutData;
         if (error)
             NSLog(@"Error reading file: %@", error.localizedDescription);
         
-        
+        UIColor * whiteColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+
         
         NSString *contextpath = @"Users/abdelwahabbourai/Documents/dormsaver/context.txt";
         NSString *context = [NSString stringWithContentsOfFile:contextpath encoding:NSUTF8StringEncoding error:&error];
         [vocalizer speakString:fileContents];
+        [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
         [self.answerLabel setText:fileContents];
         self.navigationController.navigationBar.topItem.title = context;
         [recordIcon setImage:playing];

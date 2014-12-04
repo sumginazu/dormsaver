@@ -5,7 +5,7 @@ api = API(locale='us')
 
 # get all books from result set and
 # print author and title
-items = api.item_search('Electronics', Keywords = "xbox one", limit=1)
+items = api.item_search('Electronics', Keywords = "samsung galaxy s5", limit=1)
 
 
 """a = "what is the iPhone like?"
@@ -19,9 +19,9 @@ print d[0][0]
 
 """
 
-f = open("recommendations.txt", "w")
+f = open("recommendations.txt", "a")
 count = 0
-g = open("prices.txt", "w")
+g = open("prices.txt", "a")
 for item in items:
     a = item.ASIN
     result = api.item_lookup(str(a))
@@ -39,7 +39,7 @@ for item in items:
             for i in image.Items.Item:
                 #   print '%s' % i.LargeImage.URL
                 if(i.LargeImage.URL != None):
-                    f.write("%s $ %s\n" % (b.ItemAttributes.Title, i.LargeImage.URL))
+                    f.write("%s $ %s\n" % (b.ItemAttributes.Title, b.DetailPageURL))
                     count += 1
             for i in price.Items.Item:
                 print '%s' % i.OfferSummary.LowestNewPrice.FormattedPrice

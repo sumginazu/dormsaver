@@ -19,7 +19,7 @@ grammar = r"""
 
     NP:
         {<NBAR><IN>}
-        {<NBAR>}
+        {<NBAR><CD>*}
         {<NBAR><IN><NBAR>}  # Above, connected with in/of/etc...
 """
 chunker = nltk.RegexpParser(grammar)

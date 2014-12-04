@@ -3,7 +3,7 @@ from socket import *
 if __name__ == '__main__':
  
     host = 'localhost'
-    port = 3001
+    port = 3000
     buf = 1024
  
     addr = (host, port)

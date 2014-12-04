@@ -119,7 +119,7 @@ NSMutableData *mutData;
             NSLog(@"Written: %d", bytesWritten);
         }
 
-        [NSThread sleepForTimeInterval:2.5];
+        [NSThread sleepForTimeInterval:3];
         NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/answer.txt";
 
         NSError *error;

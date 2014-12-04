@@ -41,44 +41,63 @@ def searchFactTable(word):
             return key
 
 def handler(clientsocket, clientaddr):
-    context_noun = 'it'
+    #context_noun = 'it'
     print "Accepted connection from: ", clientaddr
 
     while 1:
         data = clientsocket.recv(1024)
+        fact_found = False
         if not data:
             break
         else:
             print data
+            with open ("context.txt", "r") as myfile:
+                context_noun=myfile.read().replace('\n', '')
+            print context_noun
             f = open("answer.txt", 'w')
             #substitute and/or update context
             q = nltk.word_tokenize(data)
+    #        print "start: " + context_noun 
             if 'it' in q:
                 data = data.replace(' it ', ' %s ' % context_noun, 1)
-                print data
+                print "updated: " + data
             elif 'its' in q:
                 data = data.replace(' its ', " %s's " % context_noun, 1)
                 print data
             else:
+               
                 nouns = get_terms(data)
                 nouns = list(nouns)
                 print nouns
                 if len(nouns) > 0:
                     context_noun = ' '.join(nouns[0])
-                    print context_noun
-                key = searchFactTable(context_noun)
-                print key
-                if key != None:
-                    print q
-                    for noun in q:
-                        if noun.lower() in factTable[key]:
-                            print "fact found"
-                            f.write("Fact "+ noun + ":" + factTable[key][noun] +"\n")
+                    print "context: " + context_noun
+                    y = open("context.txt",'w')
+                    y.write(context_noun)
+                    y.close()
+                 
+            key = searchFactTable(context_noun)
+            print "key: " + key
+            if key != None:
+                print q
+                for noun in q:
+                    if noun == "screen":
+                        noun = "screen size"
+                    if noun == "memory":
+                        noun = "internal memory"
+                    if noun == "talk":
+                        noun = "talk time"
+                    if noun.lower() in factTable[key]:
+                        print "fact found: " + key + " " + noun
+                        fact_found = True
+                        f.write("The "+ noun.encode('utf-8').strip() + " is " + factTable[key][noun].encode('utf-8').strip() +"\n")
+            
 
-
+             
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
             payload = {'question': {'questionText': data}}
+            print payload
             r = requests.post(url, data = json.dumps(payload), headers = headers, auth = ('cmu_administrator', 'H5W2lhXv'))
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
@@ -88,7 +107,9 @@ def handler(clientsocket, clientaddr):
             q.close()
             #f = open("answer.txt", 'w')
             m = msg.encode('ascii','ignore')
-            f.write(m)
+#            f = open("answer.txt",'w')
+            if(not fact_found):
+                f.write(m)
             f.close()
             clientsocket.send(m)
 
@@ -99,8 +120,8 @@ def handler(clientsocket, clientaddr):
             d = filter(lambda (a,b): b == 'CD' or b == 'NNP' or  b == 'NN', c)
 
             query = ""
-
-            print d, d[0], d[0][0]
+            if(len(d) > 0):
+                print d, d[0], d[0][0]
 
             print query
             api = API(locale='us')
@@ -110,7 +131,7 @@ def handler(clientsocket, clientaddr):
 
             items = api.item_search('Electronics', Keywords = query, limit=1)
 
-
+            """
             f = open("recommendations.txt", "w")
             count = 0
             g = open("prices.txt", "w")
@@ -124,7 +145,7 @@ def handler(clientsocket, clientaddr):
                     result = api.similarity_lookup(str(a))
                     for b in result.Items.Item:
                         #  print '%s (%s)' % (b.ItemAttributes.Title, b.ASIN)
-                        if count >= 20:
+                        if count >= 12:
                             break
                         image = api.item_lookup(str(b.ASIN), ResponseGroup = "Images")
                         price = api.item_lookup(str(b.ASIN), ResponseGroup = "Offers")
@@ -150,7 +171,7 @@ def handler(clientsocket, clientaddr):
 
             f.close()
             g.close()
-
+            """
 
 
     clientsocket.close()

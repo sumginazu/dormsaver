@@ -5,7 +5,6 @@ import json
 import unicodedata
 from amazonproduct import API
 import nltk
-from summarizer import *
 
 def handler(clientsocket, clientaddr):
     print "Accepted connection from: ", clientaddr

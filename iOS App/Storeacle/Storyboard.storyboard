@@ -62,35 +62,6 @@
             </objects>
             <point key="canvasLocation" x="1275" y="221"/>
         </scene>
-        <!--Scanner View Controller - Scan Barcode-->
-        <scene sceneID="J9f-mo-NIk">
-            <objects>
-                <viewController id="t5J-HJ-dGa" customClass="ScannerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4kC-O2-jPV"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yun-79-f1b"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bRm-Y8-DBs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-TB-0h3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Scan Barcode" id="2qv-by-uga"/>
-                    <connections>
-                        <outlet property="previewView" destination="4Ps-TB-0h3" id="ydt-c4-u8f"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QwR-wZ-qiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1428" y="1825"/>
-        </scene>
         <!--Edit Friends View Controller - Add Friends-->
         <scene sceneID="zqd-3j-cke">
             <objects>
@@ -339,7 +310,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="t5J-HJ-dGa" kind="push" identifier="Barcode" id="1vs-2k-48s"/>
+                        <segue destination="VOO-0I-jYQ" kind="relationship" relationship="rootViewController" id="JeZ-PA-Vj6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjQ-B8-vmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,7 +340,9 @@
                             <outlet property="delegate" destination="rJD-cu-w3L" id="WcT-zW-Q0S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cart" id="Ra5-bk-IC5"/>
+                    <navigationItem key="navigationItem" title="Cart" id="Ra5-bk-IC5">
+                        <barButtonItem key="rightBarButtonItem" title="Buy" id="QCN-zG-rgU"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKL-8C-MMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -456,6 +429,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Product" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-ao-0JD">
+                                <rect key="frame" x="0.0" y="65" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -482,6 +460,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8T-cO-6UD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1307" y="877"/>
+        </scene>
+        <!--View Controller - Find Product-->
+        <scene sceneID="JkL-nl-Dj7">
+            <objects>
+                <viewController id="VOO-0I-jYQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lpg-Cq-u6t"/>
+                        <viewControllerLayoutGuide type="bottom" id="TTi-8f-hUh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xHc-6U-4gD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-5L-wJi">
+                                <rect key="frame" x="119" y="442" width="82" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleColor" red="0.80462381114130432" green="0.0" blue="0.43617168633858683" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Find Product" id="4vC-NW-ZLO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wX1-2o-dPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="1586"/>
         </scene>
     </scenes>
     <resources>

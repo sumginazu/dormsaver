@@ -46,6 +46,7 @@
 		8A0DC06D1A2DBDF6001C6130 /* 31e0PRO0Q%2BL.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A0DC05D1A2DBDF6001C6130 /* 31e0PRO0Q%2BL.jpg */; };
 		8A0DC06E1A2DBDF6001C6130 /* 31%2BA88eZVBL.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A0DC05E1A2DBDF6001C6130 /* 31%2BA88eZVBL.jpg */; };
 		8A0DC0701A2DBFFA001C6130 /* 41MJ1L75TcL.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A0DC06F1A2DBFFA001C6130 /* 41MJ1L75TcL.jpg */; };
+		8A0DC0731A3008CC001C6130 /* BarcoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0DC0721A3008CC001C6130 /* BarcoderViewController.m */; };
 		8AB62AE91A277A0E008A94B3 /* creme_brulee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AB62AE81A277A0E008A94B3 /* creme_brulee.jpg */; };
 		CF021AAA1A2513A700EF0353 /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF021AA91A2513A700EF0353 /* CartTableViewController.m */; };
 		CF021AAE1A2516ED00EF0353 /* genius_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF021AAD1A2516ED00EF0353 /* genius_icon.png */; };
@@ -163,6 +164,8 @@
 		8A0DC05D1A2DBDF6001C6130 /* 31e0PRO0Q%2BL.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "31e0PRO0Q%2BL.jpg"; sourceTree = "<group>"; };
 		8A0DC05E1A2DBDF6001C6130 /* 31%2BA88eZVBL.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "31%2BA88eZVBL.jpg"; sourceTree = "<group>"; };
 		8A0DC06F1A2DBFFA001C6130 /* 41MJ1L75TcL.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 41MJ1L75TcL.jpg; sourceTree = "<group>"; };
+		8A0DC0711A3008CC001C6130 /* BarcoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarcoderViewController.h; path = ../BarcoderViewController.h; sourceTree = "<group>"; };
+		8A0DC0721A3008CC001C6130 /* BarcoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarcoderViewController.m; path = ../BarcoderViewController.m; sourceTree = "<group>"; };
 		8AB62AE81A277A0E008A94B3 /* creme_brulee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = creme_brulee.jpg; path = ../../../../creme_brulee.jpg; sourceTree = "<group>"; };
 		CF021AA81A2513A700EF0353 /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
 		CF021AA91A2513A700EF0353 /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 		CFFEBB20198F3186005E96BD /* Beatlet1 */ = {
 			isa = PBXGroup;
 			children = (
+				8A0DC0711A3008CC001C6130 /* BarcoderViewController.h */,
+				8A0DC0721A3008CC001C6130 /* BarcoderViewController.m */,
 				CF3673BF1A14A7140052F73D /* dislike.png */,
 				CF7CD3471A13184D004F809E /* GCDAsyncSocket.h */,
 				CF58E94219F592E800D1962E /* SettingsViewController.h */,
@@ -661,6 +666,7 @@
 				CF3673BA1A14A2270052F73D /* RSTMALLData.m in Sources */,
 				CF58E93E19F5927400D1962E /* ScannerViewController.m in Sources */,
 				CFFEBB2B198F3186005E96BD /* Beatlet_PrototypeAppDelegate.m in Sources */,
+				8A0DC0731A3008CC001C6130 /* BarcoderViewController.m in Sources */,
 				CFB75727198F4A3C007226E7 /* ListViewController.m in Sources */,
 				CFCFE9A71992080F0099E9DA /* EditFriendsViewController.m in Sources */,
 				CF58E94419F592E800D1962E /* SettingsViewController.m in Sources */,

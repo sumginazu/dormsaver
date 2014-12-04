@@ -7,6 +7,7 @@ from amazonproduct import API
 import nltk
 from summarizer import *
 from nltk_noun_id import *
+
 from xml.dom import minidom
 
 factTable = {}
@@ -15,9 +16,9 @@ def initialize():
     xmldoc = minidom.parse('product.xml')
 
 
-    itemlist = xmldoc.getElementsByTagName('entry') 
+    itemlist = xmldoc.getElementsByTagName('entry')
 
-    
+
 
     import StringIO
 
@@ -37,7 +38,7 @@ def searchFactTable(word):
     word = word.lower()
     for key in factTable.keys():
         if word in key:
-            return factTable[key]
+            return key
 
 def handler(clientsocket, clientaddr):
     context_noun = 'it'
@@ -61,16 +62,19 @@ def handler(clientsocket, clientaddr):
             else:
                 nouns = get_terms(data)
                 nouns = list(nouns)
+                print nouns
                 if nouns > 0:
                     context_noun = ' '.join(nouns[0])
                     print context_noun
                 key = searchFactTable(context_noun)
+                print key
                 if key != None:
-                    for noun in nouns:
-                        for fact in factTable[key].keys():
-                            if noun.lower() in fact or fact in noun.lower():
-                                f.write("Fact "+ fact + ":" + factTable[key][fact] +"\n")
-                        
+                    print q
+                    for noun in q:
+                        if noun.lower() in factTable[key]:
+                            print "fact found"
+                            f.write("Fact "+ noun + ":" + factTable[key][noun] +"\n")
+
 
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -155,7 +159,7 @@ if __name__ == "__main__":
 
     host = 'localhost'
     port = 3001
-
+    initialize()
     buf = 1024
 
     addr = (host, port)

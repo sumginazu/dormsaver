@@ -7,7 +7,7 @@ from amazonproduct import API
 import nltk
 from summarizer import *
 from nltk_noun_id import *
-from WordsToNumbers import *
+
 from xml.dom import minidom
 
 factTable = {}
@@ -47,13 +47,6 @@ def handler(clientsocket, clientaddr):
     while 1:
         data = clientsocket.recv(1024)
         fact_found = False
-        wtn = WordsToNumbers()
-        s = [" one "," two ",' three', ' four', ' five', ' six', 'seven', ' eight', 'nine', ' ten ']
-        for x in s:
-            if x in data:
-                print x, wtn.parse(x)
-                data = data.replace(x, " " + str(wtn.parse(x)),1)
-            
         if not data:
             break
         else:
@@ -63,31 +56,28 @@ def handler(clientsocket, clientaddr):
             print context_noun
             f = open("answer.txt", 'w')
             #substitute and/or update context
-            q = nltk.word_tokenize(data.lower())
+            q = nltk.word_tokenize(data)
     #        print "start: " + context_noun 
-            if ' s 5 ' in data:
-                data = data.replace(' s 5 ', 's5', 1)
             if 'it' in q:
                 data = data.replace(' it ', ' %s ' % context_noun, 1)
                 print "updated: " + data
             elif 'its' in q:
                 data = data.replace(' its ', " %s's " % context_noun, 1)
                 print data
-            elif 'bla' in q:
+            #else:
                
-                nouns1 = get_terms(data)
+                #nouns = get_terms(data)
                 #nouns = list(nouns)
-                for i in len(nouns1):
-                    nouns += [nouns1.label(i)]
-                print nouns
-                if len(nouns) > 0:
-                    context_noun = ' '.join(nouns[0])
-                    print "context: " + context_noun
-                    y = open("context.txt",'w')
-                    y.write(context_noun)
-                    y.close()
+                #print nouns
+                #if len(nouns) > 0:
+                #    context_noun = ' '.join(nouns[0])
+                #    print "context: " + context_noun
+                #    y = open("context.txt",'w')
+                #    y.write(context_noun)
+                #    y.close()
                  
-            key = searchFactTable(context_noun)
+            key = None#searchFactTable(context_noun)
+           # print "key: " + key
             if key != None:
                 print q
                 for noun in q:
@@ -103,14 +93,12 @@ def handler(clientsocket, clientaddr):
                         f.write("The "+ noun.encode('utf-8').strip() + " is " + factTable[key][noun].encode('utf-8').strip() +"\n")
             
 
-            print 'before url'
+             
             url = 'https://watson-wdc01.ihost.com/instance/508/deepqa/v1/question'
             headers = {'X-SyncTimeout': '30', 'Content-Type': 'application/json', 'Accept': 'application/json'}
             payload = {'question': {'questionText': data}}
             print payload
-            print 'bf requests'
             r = requests.post(url, data = json.dumps(payload), headers = headers, auth = ('cmu_administrator', 'H5W2lhXv'))
-            print 'bf json'
             j = r.json()
             msg =  j["question"]["evidencelist"][0]["text"]
             print msg

@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
+    UIColor * color1 = [UIColor colorWithRed:0.188 green:0.498 blue:0.886 alpha:1]; /*#307fe2*/
     //[[self view] setBackgroundColor:color];
     self.navigationController.navigationBar.barTintColor = color1;
     

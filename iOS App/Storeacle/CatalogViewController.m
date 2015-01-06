@@ -54,16 +54,16 @@
     else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
-    UIColor * color = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
+    UIColor * color = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
     [[self view] setBackgroundColor:color];
     _tableView.estimatedRowHeight = 68.0;
     _tableView.rowHeight = UITableViewAutomaticDimension;
 
   //  NSLog(@"hellolooo");
-    self.navigationController.navigationBar.barTintColor = color1;
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
-    [self loadingData];
+    self.navigationController.navigationBar.barTintColor = color;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
+    //[self loadingData];
     
     //tableViewValues = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
@@ -83,9 +83,9 @@
     //code to load the data
     NSArray *lines;
     NSArray *priceArray;
-    NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/recommendations.txt";
+    NSString *filepath = @"Users/sudevbohra/Documents/dormsaver/recommendations.txt";
    // NSMutableCharacterSet *_alnum = [NSMutableCharacterSet characterSetWithCharactersInString:@"_"];
-    NSString *pricepath =@"Users/abdelwahabbourai/Documents/dormsaver/prices.txt";
+    NSString *pricepath =@"Users/sudevbohra/Documents/dormsaver/prices.txt";
     NSString *s = [NSString stringWithContentsOfFile:filepath encoding: NSASCIIStringEncoding error:NULL];
     NSString *decodedText = [s stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(decodedText);

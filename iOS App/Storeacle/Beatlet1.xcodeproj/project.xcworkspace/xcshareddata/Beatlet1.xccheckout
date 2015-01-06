@@ -10,29 +10,29 @@
 	<string>Beatlet1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1A10CC68-C49B-4092-A69D-4B45B9AD5900</key>
-		<string>https://github.com/sumginazu/dormsaver.git</string>
+		<key>9118A9138A3C07EE0C7A44E6A878E6CCA35293FB</key>
+		<string>https://github.com/sumginazu/dormsaver</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS App/Storeacle/Beatlet1.xcodeproj/project.xcworkspace</string>
+	<string>iOS App/Storeacle/Beatlet1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1A10CC68-C49B-4092-A69D-4B45B9AD5900</key>
+		<key>9118A9138A3C07EE0C7A44E6A878E6CCA35293FB</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sumginazu/dormsaver.git</string>
+	<string>https://github.com/sumginazu/dormsaver</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1A10CC68-C49B-4092-A69D-4B45B9AD5900</string>
+	<string>9118A9138A3C07EE0C7A44E6A878E6CCA35293FB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1A10CC68-C49B-4092-A69D-4B45B9AD5900</string>
+			<string>9118A9138A3C07EE0C7A44E6A878E6CCA35293FB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>dormsaver</string>
 		</dict>

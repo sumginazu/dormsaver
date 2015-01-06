@@ -16,6 +16,7 @@
 {
     NSArray *tableViewValues;
     NSArray *prices;
+    NSArray *images;
 }
 
 
@@ -38,14 +39,15 @@
     else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
-    
-    UIColor * color = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
-    UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
+
+    UIColor * color = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0f];
+    UIColor * color1 = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0f];
     [[self view] setBackgroundColor:color];
-    self.navigationController.navigationBar.barTintColor = color1;
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
-    tableViewValues = [NSArray arrayWithObjects:@"Apple MD861ZM/A Thunderbolt Cable - 2.0 M ", @"AmazonBasics 13.3-Inch Laptop Sleeve", @"Cellet Micro USB Retractable Car Charger for Samsung", nil];
-    prices = [NSArray arrayWithObjects:@"28.99 ", @"33.99", @"13.99", nil];
+    self.navigationController.navigationBar.barTintColor = color;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
+    tableViewValues = [NSArray arrayWithObjects:@"iPhone 6, White 16GB", @"Samsung Galaxy S5, Black 16GB", nil];
+    prices = [NSArray arrayWithObjects:@"$649.99", @"$524.99", nil];
+    images = [NSArray arrayWithObjects:@"iPhone6White.jpg",@"SamsungGalaxyS5.gif", nil];
     NSLog(@"%@",tableViewValues);
 }
 
@@ -73,10 +75,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
-    UIColor * aColor = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
+    UIColor * aColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1.0f];;
     cell.backgroundColor =  aColor;
-    UIColor * whiteColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
-    UIColor * grayColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1.0f];
+    UIColor * whiteColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f];
+    UIColor * grayColor = [UIColor colorWithRed:150/255.0f green:150/255.0f blue:150/255.0f alpha:1.0f];
     cell.textColor= whiteColor;
     
     //cell.textLabel.numberOfLines = 0;
@@ -89,13 +91,24 @@
 
     //imagepath = [imagepath stringByAppendingString:myExtension];
     //NSLog(imagepath);
-    //cell.imageView.image = [UIImage imageNamed: imagepath];
+    cell.imageView.image = [UIImage imageNamed: [images objectAtIndex:indexPath.row]];
     cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [prices objectAtIndex:indexPath.row];
     cell.detailTextLabel.textColor = grayColor;
     NSLog(cell.textLabel.text);
     return cell;
 
+}
+
+- (IBAction)signout:(id)sender {
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showLogin"]){
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
 }
 
 

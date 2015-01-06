@@ -18,13 +18,12 @@ const unsigned char SpeechKitApplicationKey[] =
 
 
 @interface OracleViewController ()
-
 @end
 
 @implementation OracleViewController
 
-@synthesize answerLabel,vocalizer, playing;
-@synthesize questionLabel, voiceSearch, recordIcon, recording, notRecording, status;
+@synthesize answerLabel,vocalizer, playing, questionLabel, voiceSearch, recordIcon, recording, notRecording;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,24 +37,26 @@ const unsigned char SpeechKitApplicationKey[] =
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIColor * color = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:1.0f];
+    self.questionLabel.delegate = self;
+    UIColor * color = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
     UIColor * color1 = [UIColor colorWithRed:67/255.0f green:66/255.0f blue:85/255.0f alpha:0.8f];
     [[self view] setBackgroundColor:color];
-    self.navigationController.navigationBar.barTintColor = color1;
+    self.navigationController.navigationBar.barTintColor = color;
     
     [SpeechKit setupWithID:@"NMDPTRIAL_sudevbohra20141022032301"
                       host:@"sandbox.nmdp.nuancemobility.net"
                       port:443
                     useSSL:NO
-                  delegate:self];
-    recording = [UIImage imageNamed: @"record1.png"];
+                  delegate:nil];
+    
     notRecording = [UIImage imageNamed: @"record.png"];
     playing = [UIImage imageNamed: @"stop.png"];
-    status = @"";
+    status = @"record";
     vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
     // Do any additional setup after loading the view.
+   
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,17 +89,44 @@ NSMutableData *mutData;
 
 - (IBAction)askWatson:(id)sender {
     NSString *question = [self.questionLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if ([question isEqualToString:@"Does the Xbox One have blu-ray?"])
+    //SKVocalizer* vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
+    if (![@"Oracle" isEqual:[self.navigationItem title]])
+    {
+        question = [question stringByReplacingOccurrencesOfString:@" its "
+                                                       withString:[self.navigationItem title]];
+    }
+    question = [question stringByReplacingOccurrencesOfString:@" its "
+                                         withString:@""];
+    if ([[question lowercaseString] containsString:@"xbox one have blu-ray"])
     {
         NSString* tx = @"""The Blu-ray player app allows you to enjoy your favorite Blu-ray and DVD movies through your Xbox One console.Note When you insert a disc for the first time, you’ll see a prompt to install the player app. For more information, see Set up and install the Blu-ray and DVD player app.""";
-        SKVocalizer* vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
+        [self.navigationItem setTitle:@"Xbox One"];
+        [vocalizer speakString:tx];
+        [self.answerLabel setText:tx];
+        
+    
+    else if ([[question lowercaseString] containsString:@"samsung galaxy s5"]){
+        "From Specification, the weight of the Samsung Galaxy S5 is "
+    }
+    else if ([[question lowercaseString] containsString:@"water resistance on the samsung galaxy s5"])
+    {
+        NSString* tx = @"""The Galaxy S5's water resistance works just as it does on other recent water resistant phones. There are rubber seals on the plastic cover and on the flap that sits over the USB port on the bottom.""";
+        [self.navigationItem setTitle:@"Samsung Galaxy S5"];
         [vocalizer speakString:tx];
         [self.answerLabel setText:tx];
     }
+    else if([[question lowercaseString] containsString:@"iphone six compared to the samsung galaxy"])
+    {
+        NSString* tx = @"""The iPhone 6 is closer than ever to the Samsung Galaxy S5. Where once there was a huge difference in screen size now there's just 0.4-inches. In terms of size and design though the iPhone 6 is way ahead of the S5. Made of brushed aluminium it's just 6.9mm thick compared to the 8.1 of the Galaxy S5 and feels a whole lot more premium in hand. Touch ID is also a lot easier to use than the fingerprint scanner on the S5. If you like phones you can easily use one-handed then the iPhone 6 wins out. iOS 8 is also a big step up and is a slicker experience than the TouchWiz heavy interface on the S5. The Samsung is more customisable but the iPhone is smoother and easier to use. That's where the benefits of the iPhone 6 end. The Galaxy S5 may not feel as premium but it it water resistant, has an outstanding screen (if you choose the right settings) and battery life that stands head and shoulders above Apple's phone. Add to that a microSD slot for cheap extra storage, removable battery and a camera that in some cases exceeds the solid snapper on the iPhone 6 and the Galaxy S5 becomes a compelling proposition. That's before you even factor in that it's now a lot cheaper.""";
+        [self.navigationItem setTitle:@"iPhone 6"];
+        [vocalizer speakString:tx];
+        [self.answerLabel setText:tx];
+    }
+
     else
     {
         NSString *host = @"localhost";
-        int port = 3000;
+        int port = 3001;
         CFReadStreamRef readStream;
         CFWriteStreamRef writeStream;
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef)(host), port, &readStream, &writeStream);
@@ -120,7 +148,7 @@ NSMutableData *mutData;
         }
 
         [NSThread sleepForTimeInterval:3];
-        NSString *filepath = @"Users/abdelwahabbourai/Documents/dormsaver/answer.txt";
+        NSString *filepath = @"Users/sudevbohra/Documents/dormsaver/answer.txt";
 
         NSError *error;
         NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
@@ -131,44 +159,48 @@ NSMutableData *mutData;
         UIColor * whiteColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
 
         
-        NSString *contextpath = @"Users/abdelwahabbourai/Documents/dormsaver/context.txt";
+        NSString *contextpath = @"Users/sudevbohra/Documents/dormsaver/context.txt";
         NSString *context = [NSString stringWithContentsOfFile:contextpath encoding:NSUTF8StringEncoding error:&error];
-        [vocalizer speakString:fileContents];
+        NSString* tx = fileContents;
         [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
-        [self.answerLabel setText:fileContents];
         self.navigationController.navigationBar.topItem.title = context;
-        [recordIcon setImage:playing];
-        
     }
 }
 - (IBAction)recordButtonAction:(id)sender {
-    if (![status  isEqual: @""]) {
-        [voiceSearch stopRecording];
-    }
-    if ([status isEqual: @"Playing"]){
+    recording = [UIImage imageNamed: @"record1.png"];
+    
+    if ([status isEqual: @"stop"]){
+        [recordIcon setImage:recording];
+        status = @"record1";
         [vocalizer cancel];
     }
-    else {
-        
+    else if ([status  isEqual: @"record"]) {
+        [recordIcon setImage:recording];
+        status = @"record1";
         NSString* recoType = SKSearchRecognizerType;
         NSString* langType = @"en_US";
         SKEndOfSpeechDetection detectionType = SKLongEndOfSpeechDetection;
-    
+        
         voiceSearch = [[SKRecognizer alloc] initWithType:recoType
-                                           detection:detectionType
-                                            language:langType
-                                            delegate:self];
+                                               detection:detectionType
+                                                language:langType
+                                                delegate:self];
     }
-    
-    
+    else if ([status  isEqual: @"record1"]){
+        [voiceSearch stopRecording];
+    }
 }
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results
 {
+    //questionLabel.text = @"finished";
+    notRecording = [UIImage imageNamed: @"record.png"];
+    status = @"record";
+    [recordIcon setImage:notRecording];
     long numOfResults = [results.results count];
     if (numOfResults > 0)
     {
         questionLabel.text = [results firstResult];
-        [self askWatson:0];
+        //[self askWatson:0];
         
     }
 }
@@ -189,31 +221,39 @@ NSMutableData *mutData;
 
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion
 {
+    questionLabel.text = @"Error Recognizing.";
+    questionLabel.text = suggestion;
 }
 
 - (void)recognizerDidBeginRecording:(SKRecognizer *)recognizer
 {
+    questionLabel.text = @"Processing...";
     
-    [recordIcon setImage:recording];
-    status = @"Recording";
+    //status = @"Recording";
+    
 }
 
 - (void)recognizerDidFinishRecording:(SKRecognizer *)recognizer
 {
+    //questionLabel.text = @"finished";
+    notRecording = [UIImage imageNamed: @"record.png"];
     [recordIcon setImage:notRecording];
-    status = @"";
+    status = @"record";
 }
 
 - (void)vocalizer:(SKVocalizer *)vocalizer didFinishSpeakingString:(NSString *)text withError:(NSError *)error
 {
-    status = @"";
-    [recordIcon setImage:notRecording];
+    recording = [UIImage imageNamed: @"record.png"];
+    [recordIcon setImage:recording];
+    status = @"record";
+    
 }
 
 - (void)vocalizer:(SKVocalizer *)vocalizer willBeginSpeakingString:(NSString *)text
 {
+    playing = [UIImage imageNamed: @"stop.png"];
     [recordIcon setImage:playing];
-    status = @"Playing";
+    status = @"stop";
 }
 
 
@@ -224,6 +264,11 @@ NSMutableData *mutData;
     // receivedData is an instance variable declared elsewhere.
     [mutData appendData:data];
     NSLog(@"Response Successful!");
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 

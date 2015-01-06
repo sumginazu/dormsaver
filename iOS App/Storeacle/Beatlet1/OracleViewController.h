@@ -11,6 +11,9 @@
 @import AVFoundation;
 
 @interface OracleViewController : UIViewController <SpeechKitDelegate, SKRecognizerDelegate, SKVocalizerDelegate>
+{
+    NSString* status;
+}
 @property (weak, nonatomic) IBOutlet UITextField *questionLabel;
 
 @property (weak, nonatomic) IBOutlet UITextView *answerLabel;
@@ -27,5 +30,4 @@
 @property (weak, nonatomic) UIImage* notRecording;
 @property (weak, nonatomic) UIImage* playing;
 @property (strong, nonatomic) SKVocalizer* vocalizer;
-@property (weak, nonatomic) NSString* status;
 @end

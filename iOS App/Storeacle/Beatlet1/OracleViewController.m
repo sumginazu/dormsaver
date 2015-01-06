@@ -142,7 +142,7 @@ NSMutableData *mutData;
         [vocalizer speakString:tx];
         [self.answerLabel setText:tx];
     }
-    else if([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"samsung", @"galaxy",@"compare",@"iphone", nil]])
+    else if([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"samsung", @"galaxy",@"iphone", nil]])
     {
         NSString* tx = @"""The iPhone 6 is closer than ever to the Samsung Galaxy S5. Where once there was a huge difference in screen size now there's just 0.4-inches. In terms of size and design though the iPhone 6 is way ahead of the S5. Made of brushed aluminium it's just 6.9mm thick compared to the 8.1 of the Galaxy S5 and feels a whole lot more premium in hand. Touch ID is also a lot easier to use than the fingerprint scanner on the S5. If you like phones you can easily use one-handed then the iPhone 6 wins out. iOS 8 is also a big step up and is a slicker experience than the TouchWiz heavy interface on the S5. The Samsung is more customisable but the iPhone is smoother and easier to use. That's where the benefits of the iPhone 6 end. The Galaxy S5 may not feel as premium but it it water resistant, has an outstanding screen (if you choose the right settings) and battery life that stands head and shoulders above Apple's phone. Add to that a microSD slot for cheap extra storage, removable battery and a camera that in some cases exceeds the solid snapper on the iPhone 6 and the Galaxy S5 becomes a compelling proposition. That's before you even factor in that it's now a lot cheaper.""";
         [self.navigationItem setTitle:@"iPhone 6"];

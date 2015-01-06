@@ -47,7 +47,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
     tableViewValues = [NSArray arrayWithObjects:@"iPhone 6, White 16GB", @"Samsung Galaxy S5, Black 16GB", nil];
     prices = [NSArray arrayWithObjects:@"$649.99", @"$524.99", nil];
-    images = [NSArray arrayWithObjects:@"iPhone6White.jpg",@"SamsungGalaxyS5.gif", nil];
+    images = [NSArray arrayWithObjects:@"iPhone6White.jpg",@"SamsungGalaxyS5.jpg", nil];
     NSLog(@"%@",tableViewValues);
 }
 
@@ -91,6 +91,7 @@
 
     //imagepath = [imagepath stringByAppendingString:myExtension];
     //NSLog(imagepath);
+    
     cell.imageView.image = [UIImage imageNamed: [images objectAtIndex:indexPath.row]];
     cell.textLabel.text = [tableViewValues objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [prices objectAtIndex:indexPath.row];

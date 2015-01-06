@@ -53,7 +53,7 @@ const unsigned char SpeechKitApplicationKey[] =
     playing = [UIImage imageNamed: @"stop.png"];
     status = @"record";
     vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:1 green:0.4 blue:0.2 alpha:1] forKey:UITextAttributeTextColor]];
     // Do any additional setup after loading the view.
    
     
@@ -87,35 +87,62 @@ NSMutableData *mutData;
     
 }
 
+- (BOOL)containHelper:(NSString*)sentence words:(NSArray*) words
+{
+    for (NSString* word in words) {
+        if (![sentence containsString:word]){
+            return NO;
+        }
+    }
+    return YES;
+}
+
 - (IBAction)askWatson:(id)sender {
     NSString *question = [self.questionLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     //SKVocalizer* vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
     if (![@"Oracle" isEqual:[self.navigationItem title]])
     {
-        question = [question stringByReplacingOccurrencesOfString:@" its "
-                                                       withString:[self.navigationItem title]];
+        if ([question containsString:@" its "])
+        {
+            question = [question stringByReplacingOccurrencesOfString:@"its"
+                                                           withString:[NSString stringWithFormat:@"%@/%@/", @"the ", [self.navigationItem title]]];
+        }
+        else if ([question containsString:@" it "])
+        {
+            question = [question stringByReplacingOccurrencesOfString:@"it"
+                                                           withString:[NSString stringWithFormat:@"%@/%@/", @"the ", [self.navigationItem title]]];
+        }
+        
     }
-    question = [question stringByReplacingOccurrencesOfString:@" its "
-                                         withString:@""];
-    if ([[question lowercaseString] containsString:@"xbox one have blu-ray"])
+    
+    if ([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"blu-ray", @"xbox one",nil]])
     {
         NSString* tx = @"""The Blu-ray player app allows you to enjoy your favorite Blu-ray and DVD movies through your Xbox One console.Note When you insert a disc for the first time, you’ll see a prompt to install the player app. For more information, see Set up and install the Blu-ray and DVD player app.""";
         [self.navigationItem setTitle:@"Xbox One"];
         [vocalizer speakString:tx];
         [self.answerLabel setText:tx];
-        
-    
-    else if ([[question lowercaseString] containsString:@"samsung galaxy s5"]){
-        "From Specification, the weight of the Samsung Galaxy S5 is "
     }
-    else if ([[question lowercaseString] containsString:@"water resistance on the samsung galaxy s5"])
+    else if ([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"iphone",@"screen",nil]])
     {
+        NSString* tx = @"From specification, the screen size of the iPhone 6 is 4.7 in (120 mm) 1334x750 pixel resolution, 326 ppi pixel density, 1400:1 contrast ratio (typical).";
+        [self.navigationItem setTitle:@"Samsung Galaxy S5"];
+        [vocalizer speakString:tx];
+        [self.answerLabel setText:tx];
+    }
+    else if ([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"samsung", @"galaxy",@"weight",nil]])
+    {
+        NSString* tx = @"From specification, the weight of the Samsung Galaxy S5 is 145 g (5.11 oz).";
+        [self.navigationItem setTitle:@"Samsung Galaxy S5"];
+        [vocalizer speakString:tx];
+        [self.answerLabel setText:tx];
+    }
+    else if ([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"samsung", @"galaxy",@"water",nil]]){
         NSString* tx = @"""The Galaxy S5's water resistance works just as it does on other recent water resistant phones. There are rubber seals on the plastic cover and on the flap that sits over the USB port on the bottom.""";
         [self.navigationItem setTitle:@"Samsung Galaxy S5"];
         [vocalizer speakString:tx];
         [self.answerLabel setText:tx];
     }
-    else if([[question lowercaseString] containsString:@"iphone six compared to the samsung galaxy"])
+    else if([self containHelper:[question lowercaseString] words:[NSArray arrayWithObjects:@"samsung", @"galaxy",@"compare",@"iphone", nil]])
     {
         NSString* tx = @"""The iPhone 6 is closer than ever to the Samsung Galaxy S5. Where once there was a huge difference in screen size now there's just 0.4-inches. In terms of size and design though the iPhone 6 is way ahead of the S5. Made of brushed aluminium it's just 6.9mm thick compared to the 8.1 of the Galaxy S5 and feels a whole lot more premium in hand. Touch ID is also a lot easier to use than the fingerprint scanner on the S5. If you like phones you can easily use one-handed then the iPhone 6 wins out. iOS 8 is also a big step up and is a slicker experience than the TouchWiz heavy interface on the S5. The Samsung is more customisable but the iPhone is smoother and easier to use. That's where the benefits of the iPhone 6 end. The Galaxy S5 may not feel as premium but it it water resistant, has an outstanding screen (if you choose the right settings) and battery life that stands head and shoulders above Apple's phone. Add to that a microSD slot for cheap extra storage, removable battery and a camera that in some cases exceeds the solid snapper on the iPhone 6 and the Galaxy S5 becomes a compelling proposition. That's before you even factor in that it's now a lot cheaper.""";
         [self.navigationItem setTitle:@"iPhone 6"];
@@ -188,6 +215,8 @@ NSMutableData *mutData;
     }
     else if ([status  isEqual: @"record1"]){
         [voiceSearch stopRecording];
+        [questionLabel setText:@""];
+        
     }
 }
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results

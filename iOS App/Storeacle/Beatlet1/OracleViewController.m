@@ -77,15 +77,17 @@ const unsigned char SpeechKitApplicationKey[] =
 */
 NSMutableData *mutData;
 
-- (IBAction)dislikeAction:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank you for disliking"
-                                                    message:@"Now, I can get better at answering your questions."
+- (IBAction)likeAction:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Did you find this answer useful?"
+                                                    message:@"This helps us improve Storeacle."
                                                    delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+                                          cancelButtonTitle:@"Yes"
+                                          otherButtonTitles:@"No"];
     [alert show];
     
 }
+
+
 
 - (BOOL)containHelper:(NSString*)sentence words:(NSArray*) words
 {
@@ -96,6 +98,7 @@ NSMutableData *mutData;
     }
     return YES;
 }
+
 
 - (IBAction)askWatson:(id)sender {
     NSString *question = [self.questionLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

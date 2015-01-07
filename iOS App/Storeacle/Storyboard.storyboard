@@ -422,6 +422,9 @@
                                 <state key="normal" title="Did you find this answer useful?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="likeAction:" destination="MWV-q7-69c" eventType="touchUpInside" id="ywj-NE-LWw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -450,7 +453,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FullSizeRender.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="o7f-FT-DWu">
-                                <rect key="frame" x="-56" y="64" width="493" height="471"/>
+                                <rect key="frame" x="-91" y="64" width="493" height="471"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKv-mr-lFR">
                                 <rect key="frame" x="109" y="426" width="102" height="54"/>
@@ -459,11 +462,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Products" translatesAutoresizingMaskIntoConstraints="NO" id="ZTs-Wb-mSa">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Products" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-Rx-BZq">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="VOO-0I-jYQ" id="AM8-Jn-9dP"/>
+                                    <outlet property="delegate" destination="VOO-0I-jYQ" id="noT-Tg-b9W"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -480,7 +483,6 @@
                 <searchDisplayController id="570-bp-tz2">
                     <connections>
                         <outlet property="delegate" destination="VOO-0I-jYQ" id="1JU-pS-V8C"/>
-                        <outlet property="searchBar" destination="ZTs-Wb-mSa" id="BID-cn-v7d"/>
                         <outlet property="searchContentsController" destination="VOO-0I-jYQ" id="3Ms-fd-ezO"/>
                         <outlet property="searchResultsDataSource" destination="VOO-0I-jYQ" id="ySH-eG-qV9"/>
                         <outlet property="searchResultsDelegate" destination="VOO-0I-jYQ" id="5XP-qu-N6P"/>

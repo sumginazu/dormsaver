@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *answerLabel;
 - (IBAction)dislikeAction:(id)sender;
+- (IBAction)likeAction:(id)sender;
 
 @property (retain, nonatomic) NSMutableData *receivedData;
 

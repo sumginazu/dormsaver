@@ -44,7 +44,7 @@
     UIColor * color1 = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0f];
     [[self view] setBackgroundColor:color];
     self.navigationController.navigationBar.barTintColor = color;
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:0.216 green:0.318 blue:0.573 alpha:1] /*#375192*/ forKey:UITextAttributeTextColor]];
     tableViewValues = [NSArray arrayWithObjects:@"iPhone 6, White 16GB", @"Samsung Galaxy S5, Black 16GB", nil];
     prices = [NSArray arrayWithObjects:@"$649.99", @"$524.99", nil];
     images = [NSArray arrayWithObjects:@"iPhone6White.jpg",@"SamsungGalaxyS5.jpg", nil];
